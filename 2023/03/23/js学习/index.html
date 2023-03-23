@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>npminstall问题 | Hexo</title>
+  <title>js基础 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="npm install 出现问题第一种 &amp;#x63;&amp;#104;&amp;#x72;&amp;#x6f;&amp;#109;&amp;#x65;&amp;#100;&amp;#x72;&amp;#105;&amp;#x76;&amp;#101;&amp;#114;&amp;#64;&amp;#x32;&amp;#46;&amp;#52;&amp;#x36;&amp;#x2e;&amp;#48; install: node install.js1234567npm ERR! code ELIFECYCLEnpm ERR! errno">
+  <meta name="description" content="数据类型 原始类型 数值 字符串 布尔   引用类型 对象   空类型 undefined 未定义 数值没有 null 对象没有   es6新类型 Symbol BigInt    检测数据类型 typeof 判断基本数据类型使用   运算符&#x3D;&#x3D; 与 &#x3D;&#x3D;&#x3D;  !&#x3D;  !&#x3D;&#x3D;&#x3D;&#x3D; 数值相等 &#x3D;&#x3D;&#x3D; 强等 数据类型也要相同 字符串属性 length  方法 charAt()  返回制定位置的字符 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npminstall问题">
-<meta property="og:url" content="http://example.com/2023/03/22/npminstall%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="js基础">
+<meta property="og:url" content="http://example.com/2023/03/23/js%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="npm install 出现问题第一种 &amp;#x63;&amp;#104;&amp;#x72;&amp;#x6f;&amp;#109;&amp;#x65;&amp;#100;&amp;#x72;&amp;#105;&amp;#x76;&amp;#101;&amp;#114;&amp;#64;&amp;#x32;&amp;#46;&amp;#52;&amp;#x36;&amp;#x2e;&amp;#48; install: node install.js1234567npm ERR! code ELIFECYCLEnpm ERR! errno">
+<meta property="og:description" content="数据类型 原始类型 数值 字符串 布尔   引用类型 对象   空类型 undefined 未定义 数值没有 null 对象没有   es6新类型 Symbol BigInt    检测数据类型 typeof 判断基本数据类型使用   运算符&#x3D;&#x3D; 与 &#x3D;&#x3D;&#x3D;  !&#x3D;  !&#x3D;&#x3D;&#x3D;&#x3D; 数值相等 &#x3D;&#x3D;&#x3D; 强等 数据类型也要相同 字符串属性 length  方法 charAt()  返回制定位置的字符 1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-22T07:18:13.000Z">
-<meta property="article:modified_time" content="2023-03-22T07:19:18.104Z">
+<meta property="article:published_time" content="2023-03-23T12:03:09.000Z">
+<meta property="article:modified_time" content="2023-03-23T13:52:01.112Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="前端学习">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -154,45 +155,424 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-npminstall问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      npminstall问题
+      js基础
     </h1>
   
 
         
-        <a href="/2023/03/22/npminstall%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2023-03-22T07:18:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-22</time>
+        <a href="/2023/03/23/js%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2023-03-23T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="npm-install-出现问题"><a href="#npm-install-出现问题" class="headerlink" title="npm install 出现问题"></a>npm install 出现问题</h1><h2 id="第一种-x63-104-x72-x6f-109-x65-100-x72-105-x76-101-114-64-x32-46-52-x36-x2e-48-install-node-install-js"><a href="#第一种-x63-104-x72-x6f-109-x65-100-x72-105-x76-101-114-64-x32-46-52-x36-x2e-48-install-node-install-js" class="headerlink" title="第一种 &#x63;&#104;&#x72;&#x6f;&#109;&#x65;&#100;&#x72;&#105;&#x76;&#101;&#114;&#64;&#x32;&#46;&#52;&#x36;&#x2e;&#48; install: node install.js"></a>第一种 <a href="mailto:&#x63;&#104;&#x72;&#x6f;&#109;&#x65;&#100;&#x72;&#105;&#x76;&#101;&#114;&#64;&#x32;&#46;&#52;&#x36;&#x2e;&#48;">&#x63;&#104;&#x72;&#x6f;&#109;&#x65;&#100;&#x72;&#105;&#x76;&#101;&#114;&#64;&#x32;&#46;&#52;&#x36;&#x2e;&#48;</a> install: <code>node install.js</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno 1</span><br><span class="line">npm ERR! chromedriver@2.46.0 install: `node install.js`</span><br><span class="line">npm ERR! Exit status 1</span><br><span class="line">npm ERR!</span><br><span class="line">npm ERR! Failed at the chromedriver@2.46.0 install script.</span><br><span class="line">npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</span><br></pre></td></tr></table></figure>
+        <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>原始类型<ul>
+<li>数值</li>
+<li>字符串</li>
+<li>布尔</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>对象</li>
+</ul>
+</li>
+<li>空类型<ul>
+<li>undefined 未定义 数值没有</li>
+<li>null 对象没有</li>
+</ul>
+</li>
+<li>es6新类型<ul>
+<li>Symbol</li>
+<li>BigInt</li>
+</ul>
+</li>
+</ul>
+<h4 id="检测数据类型"><a href="#检测数据类型" class="headerlink" title="检测数据类型"></a>检测数据类型</h4><ul>
+<li><p>typeof</p>
+<p>判断基本数据类型使用</p>
+</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="与"><a href="#与" class="headerlink" title="== 与 ===  !=  !=="></a>== 与 ===  !=  !==</h4><p>== 数值相等</p>
+<p>=== 强等 数据类型也要相同</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>length</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p>charAt() </p>
+<p>返回制定位置的字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;123456&quot;</span>;</span><br><span class="line">str.<span class="title function_">charAt</span>(<span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></li>
+<li><p>concat()</p>
+<p>连接字符串 </p>
+<p>可以接受多个参数，参数会自动转换为字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">&quot;456&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> result = str1.<span class="title function_">concat</span>(str2); <span class="comment">//123456</span></span><br></pre></td></tr></table></figure></li>
+<li><p>substring()</p>
+<p>截取字符串</p>
+<p>开始位置，结束位置（不包含）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;qwerty&quot;</span>;</span><br><span class="line">str.<span class="title function_">substring</span>(<span class="number">0</span>,<span class="number">2</span>);<span class="comment">//qw</span></span><br></pre></td></tr></table></figure></li>
+<li><p>substr()</p>
+<p>截取字符串</p>
+<p>开始位置，长度</p>
+</li>
+<li><p>indexOf() </p>
+<p>用于确定一个字符串在另一个字符串中出现的位置，-1表示没找到。第二个参数表示搜索开始的地方。</p>
+</li>
+<li><p>trim() </p>
+<p>用于去除字符串两端的空格</p>
+<ul>
+<li>trimStart() 去掉头部</li>
+<li>trimEnd() 去掉尾部</li>
+</ul>
+</li>
+<li><p>split() </p>
+<p>按照规则分割字符串，返回由子字符串组成的数组 ，第二个参数限定返回数组的最大成员数</p>
+</li>
+</ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p>isArray() 判断是不是数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</span><br><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>push()  / pop()</p>
+<ul>
+<li>push() 在数组末端加入一个或多个元素，并返回长度</li>
+<li>pop() 在数组末端删除一个元素，并返回该元素</li>
+</ul>
+</li>
+<li><p>shift() / unshift()</p>
+<ul>
+<li>shift() 在数组前端删除一个元素，并返回该元素</li>
+<li>unshift() 在数组前端加入一个或多个元素，并返回长度</li>
+</ul>
+</li>
+<li><p>join() </p>
+<p>以指定参数作为分割符将所有数组成员连接为一个字符串返回，默认参数为逗号</p>
+</li>
+<li><p>concat()</p>
+<p>将新数组添加到原数组后，将返回新数组，原数组不变</p>
+</li>
+<li><p>reverse()</p>
+<p>颠倒数组，返回改变后数组，改变原数组</p>
+</li>
+<li><p>indexOf()</p>
+<p>查找固定元素在数组中第一次出现的位置，没有返回-1，第二个参数表示搜索开始的地方</p>
+</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><blockquote>
+<p>函数提升优于变量提升</p>
+</blockquote>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><blockquote>
+<p>对象的属性值还是对象，形成链式引用</p>
+</blockquote>
+<h4 id="Math-对象"><a href="#Math-对象" class="headerlink" title="Math 对象"></a>Math 对象</h4><p>提供数学功能</p>
+<ul>
+<li><p>Math.abs()</p>
+</li>
+<li><p>Math.max()</p>
+</li>
+<li><p>Math.min()</p>
+</li>
+<li><p>Math.floor()：  向下取整</p>
+</li>
+<li><p>Math.ceil()： 向上取整</p>
+</li>
+<li><p>Math.random() </p>
+<p>返回[0,1)的伪随机数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getRandomnumber</span>(<span class="params">min, max</span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">random</span>() * (max - min) + min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Date-对象"><a href="#Date-对象" class="headerlink" title="Date 对象"></a>Date 对象</h4><p>以1970年1月1日00:00:00作为时间零点 （北京时间08时）</p>
+<ul>
+<li><p>Data.now() 返回时间戳</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">loh</span>(<span class="keyword">new</span> <span class="title class_">Data</span>(<span class="title class_">Data</span>.<span class="title function_">now</span>()));</span><br><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br></pre></td></tr></table></figure></li>
+<li><p> getDate() 几号</p>
+</li>
+<li><p>getDay() 星期</p>
+</li>
+<li><p>getYear() 距离1970几年</p>
+</li>
+<li><p>getFullYear() 目前几年</p>
+</li>
+<li><p>getMonth() 0 - 11</p>
+</li>
+<li><p>getHours() 0 -23</p>
+</li>
+<li><p>getMilliseconds()</p>
+</li>
+<li><p>getMinutes() 0 - 59</p>
+</li>
+<li><p>getSeconds() 0 - 59</p>
+</li>
+<li><p>getTime() 返回时间戳</p>
+</li>
+</ul>
+<h4 id="DOM-对象"><a href="#DOM-对象" class="headerlink" title="DOM 对象"></a>DOM 对象</h4><h5 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h5><p>DOM的最小组成单位叫做节点</p>
+<p>节点的类型</p>
+<ul>
+<li>Document： 整个文档树的顶层节点</li>
+<li>DocumentType： doctype标签</li>
+<li>Element： 网页的各种HTML标签</li>
+<li>Attribute： 网页元素的属性 （class）</li>
+<li>Text： 标签之间或标签包含的文本</li>
+<li>Comment： 注释</li>
+<li>DocumentFragment： 文档的片段</li>
+</ul>
+<h5 id="节点树"><a href="#节点树" class="headerlink" title="节点树"></a>节点树</h5><ul>
+<li>node.nodeType();</li>
+</ul>
+<h5 id="document-对象"><a href="#document-对象" class="headerlink" title="document 对象"></a>document 对象</h5><h6 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h6><ul>
+<li><p>document.getElementsByTagName() </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;div&quot;</span>) </span><br></pre></td></tr></table></figure></li>
+<li><p>document.getElementsByID()</p>
+</li>
+<li><p>document.getElementsByClassName()</p>
+</li>
+<li><p>document.getElementsByName()</p>
+</li>
+<li><p>document.querySelector() </p>
+<p>接受一个CSS选择器作为参数，返回匹配该选择器的元素节点，如果有多个节点满足匹配条件，则返回第一个匹配的节点，如果没有发现匹配的节点，则返回null</p>
+</li>
+<li><p>document.querySelectorAll() </p>
+<p>返回一个nodeList对象，包含全部。</p>
+</li>
+</ul>
+<h6 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h6><ul>
+<li><p>document,createElement()</p>
+<p>用来生成元素节点，并返回该节点</p>
+</li>
+<li><p>document.createTextNode()</p>
+<p>生成文本节点，并返回该节点，参数为文本节点内容</p>
+<p>appendChild()</p>
+</li>
+<li><p>document.createAttribute()</p>
+<p>生成属性节点，并返回   </p>
+<p>setAttributeNode()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;p&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> content = <span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(<span class="string">&quot;文本&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> id = <span class="variable language_">document</span>.<span class="title function_">createAttribute</span>(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">id.<span class="property">value</span> = <span class="string">&quot;root&quot;</span>;</span><br><span class="line">text.<span class="title function_">appendChild</span>(content);</span><br><span class="line">text.<span class="title function_">setAttributeNode</span>(id);</span><br><span class="line"><span class="comment">//&lt;p id = &quot;root&quot;&gt; 文本 &lt;/p&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="Element-对象"><a href="#Element-对象" class="headerlink" title="Element 对象"></a>Element 对象</h5><h6 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h6><ul>
+<li><p>id</p>
+</li>
+<li><p>className</p>
+</li>
+<li><p>classList</p>
+<p>方法</p>
+<ul>
+<li>add()</li>
+<li>remove()</li>
+<li>contains()：是否包含某个class</li>
+<li>toggle()：将某个class 移入或移出</li>
+</ul>
+</li>
+<li><p>innerHTML 可以识别标签</p>
+</li>
+<li><p>innerText</p>
+</li>
+<li><p>clientHeight</p>
+<p>返回整数，包括padding</p>
+<p>document.body.clientHeight  网页实际高度</p>
+<p>document.documentElement.clientHeight 当前窗口高度</p>
+</li>
+<li><p>clientWidth</p>
+</li>
+<li><p>scrollHeight </p>
+<p>包括溢出部分</p>
+</li>
+<li><p>scrollWidth </p>
+</li>
+<li><p>scrollLeft </p>
+<p>元素水平滚动条向右滚动的像素数量</p>
+</li>
+<li><p>scrollTop</p>
+<p>元素水平滚动条向下滚动的像素数量</p>
+</li>
+<li><p>offsetHeight</p>
+<p>CSS垂直高度 包括本身高度 padding border</p>
+</li>
+<li><p>offsetWidth</p>
+</li>
+<li><p>offsetLeft</p>
+<p>到定位父级左边界的间距</p>
+</li>
+<li><p>offsetTop</p>
+</li>
+</ul>
+<h5 id="操作CSS"><a href="#操作CSS" class="headerlink" title="操作CSS"></a>操作CSS</h5><ul>
+<li><p>setAttribute()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.<span class="title function_">setAttribute</span>(<span class="string">&quot;style&quot;</span>, <span class="string">&quot;值&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>设置style属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.<span class="property">style</span>.<span class="property">width</span> = 100px;</span><br></pre></td></tr></table></figure></li>
+<li><p>CSS text</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xx.<span class="property">style</span>.<span class="property">cssText</span> = <span class="string">&quot;width: 100px&quot;</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><h5 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h5><h6 id="HTML事件"><a href="#HTML事件" class="headerlink" title="HTML事件"></a>HTML事件</h6><p>缺点： HTML和JS没有分开</p>
+<h6 id="DOM0级事件"><a href="#DOM0级事件" class="headerlink" title="DOM0级事件"></a>DOM0级事件</h6><p>缺点： 无法同时添加多个事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btu.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h6 id="DOM2级事件"><a href="#DOM2级事件" class="headerlink" title="DOM2级事件"></a>DOM2级事件</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btu.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)&#125;);</span><br><span class="line">btu.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)&#125;);</span><br></pre></td></tr></table></figure>
 
 
 
-<p>该问题是vue-cli脚手架的一个bug，原因是chromedriver的部分文件被国内网络给墙掉了，无法下载完整的chromedirver包，解决办法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver</span><br></pre></td></tr></table></figure>
+<h5 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h5><ul>
+<li><p>click</p>
+</li>
+<li><p>dbclick</p>
+</li>
+<li><p>mousedown： 鼠标按下</p>
+</li>
+<li><p>mouseup</p>
+</li>
+<li><p>mousemove： 鼠标在节点内移动</p>
+</li>
+<li><p>mouseenter：鼠标进入一个节点，子节点不算</p>
+</li>
+<li><p>mouseleave：鼠标离开节点，离开父节点不算</p>
+</li>
+<li><p>mouseover</p>
+</li>
+<li><p>mouseout</p>
+</li>
+<li><p>wheel：鼠标滚动</p>
+</li>
+</ul>
+<h5 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h5><ul>
+<li>keydown：按下键盘</li>
+<li>keypress：按下有值的键触发（先触发keydown）</li>
+<li>keyup：松开键盘</li>
+</ul>
+<h5 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h5><ul>
+<li>input： 值发生变化</li>
+<li>select： 选中文本触发</li>
+<li>change： 值发生变化 不会连续触发（失去焦点 ）</li>
+<li>reset：重置表单</li>
+<li>submit：提交数据</li>
+</ul>
+<h5 id="Event-事件对象"><a href="#Event-事件对象" class="headerlink" title="Event 事件对象"></a>Event 事件对象</h5><p>事件发生以后会产生一个事件对象，作为参数传给监听函数。</p>
+<h6 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h6><ul>
+<li>target： 返回触发事件的节点</li>
+<li>type：事件类型</li>
+<li>keyCode：键盘事件中代表每个按键的唯一标识</li>
+</ul>
+<h6 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h6><ul>
+<li>preventDefault()： 阻止默认事件</li>
+<li>stopPropagation(): 阻止事件冒泡</li>
+</ul>
+<h5 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h5><p>通过父元素控制子元素的事件</p>
+<h5 id="定时器-timer"><a href="#定时器-timer" class="headerlink" title="定时器 timer"></a>定时器 timer</h5><ul>
+<li><p>setTimeout()：指定某段代码在多少毫秒后执行</p>
+<p>在setTimeout 中 this 指向全局</p>
+<p>方法返回定时器编号</p>
+<p>通过clearTimeout() 取消定时器 </p>
+</li>
+<li><p>setInterval()： 每间隔多久执行一次</p>
+<p>clearInterval() </p>
+</li>
+</ul>
+<h5 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h5><p>在短时间内连续触发的事件，让他在某个时间期限内只执行最后一次触发</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">fn, delay</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> timer = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">      <span class="built_in">clearTimeout</span>(timer);</span><br><span class="line">    &#125;</span><br><span class="line">    timer = <span class="built_in">setTimeout</span>(fn, delay);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> <span class="variable language_">window</span>.<span class="property">onscroll</span> = <span class="title function_">debounce</span>(scrollHandle, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">scrollHandle</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> scollTop = <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">scollTop</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(scollTop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h5><p>在短时间内只执行一次</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">fn, delay</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> valid = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!valid)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    valid = <span class="literal">true</span>;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="title function_">fn</span>();</span><br><span class="line">      valid = <span class="literal">true</span>;</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>原文链接</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/38a3c1513fbe">https://www.jianshu.com/p/38a3c1513fbe</a></p>
-<h2 id="第二种-①卡住不动-②unexpected-end-of-file-③-cb-never-called等"><a href="#第二种-①卡住不动-②unexpected-end-of-file-③-cb-never-called等" class="headerlink" title="第二种 ①卡住不动 ②unexpected end of file ③ cb() never called等"></a>第二种 ①<strong>卡住不动</strong> ②<strong>unexpected end of file</strong> ③ <strong>cb() never called</strong>等</h2><p>一般情况下都是因为使用官方默认源，可以采用换源的方法</p>
-<p>或者可以清除一下缓存，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure>
+<h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><h5 id="Babel-转码器"><a href="#Babel-转码器" class="headerlink" title="Babel 转码器"></a>Babel 转码器</h5><p>将ES6转换为ES5</p>
+<h5 id="let"><a href="#let" class="headerlink" title="let"></a>let</h5><p>var 函数级作用域</p>
+<p>let 块级作用域</p>
+<p>let不存在变量提升</p>
+<h5 id="const"><a href="#const" class="headerlink" title="const"></a>const</h5><p>常量，声明后不可改变，声明必须立刻初始化</p>
+<p>块级作用域</p>
+<p>不存在变量提升</p>
+<h5 id="对象解构赋值"><a href="#对象解构赋值" class="headerlink" title="对象解构赋值"></a>对象解构赋值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;name, age&#125; = &#123;<span class="attr">name</span>: <span class="string">&quot;111&quot;</span>, <span class="attr">age</span>: <span class="string">&quot;22&quot;</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>与次序无关，要同名</p>
+<h5 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h5><ul>
+<li>新的遍历</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>..<span class="property">of</span> </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>模版字符串</p>
+<p>在字符串中嵌入变量 反引号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`&lt;a href = &quot;<span class="subst">$&#123;href&#125;</span>&quot;&gt;<span class="subst">$&#123;text&#125;</span>&lt;/a&gt;`</span></span><br></pre></td></tr></table></figure></li>
+<li><p>新的方法</p>
+<ul>
+<li>includes()： 返回bool 表示是否找到</li>
+<li>startsWith()：是否在头部</li>
+<li>endsWith()：是否在尾部</li>
+<li>repeat(n): 返回新字符串，将原字符串重复n次</li>
+<li>padStart(n, ‘ab’)：如果字符串不够长，用ab在头部填充 </li>
+<li>padEnd()</li>
+<li>at(): 返回参数指定位位置的字符，支持负索引（倒数 -1 开始）</li>
+</ul>
+</li>
+</ul>
+<h5 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h5><ul>
+<li>… 扩展运算符 <ul>
+<li>替换apply</li>
+<li>合并数组</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>新增方法</p>
+<ul>
+<li><p>Array.from() </p>
+<p>将类数组转换为数组</p>
+<blockquote>
+<p>类数组（arguments，元素集合，伪数组的对象），只能使用数组读取方式和length，不能使用数组方法（push）</p>
+</blockquote>
+</li>
+<li><p>Array.of()</p>
+<p> 将一组数转换为数组</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="对象的扩展"><a href="#对象的扩展" class="headerlink" title="对象的扩展"></a>对象的扩展</h5><ul>
+<li><p>属性简写</p>
+</li>
+<li><p>方法简写</p>
+</li>
+<li><p>属性名表达式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> propkey = <span class="string">&quot;name&quot;</span></span><br><span class="line"><span class="keyword">let</span> people = &#123;</span><br><span class="line">	[prokey]: <span class="string">&quot;zhangsan&quot;</span>,</span><br><span class="line">	[<span class="string">&#x27;a&#x27;</span> + <span class="string">&#x27;ge&#x27;</span>]: <span class="number">12</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>对象的扩展运算符</p>
+</li>
+</ul>
+<h5 id="函数扩展-箭头函数"><a href="#函数扩展-箭头函数" class="headerlink" title="函数扩展_箭头函数"></a>函数扩展_箭头函数</h5><p>不改变this指向</p>
+<h5 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h5><ul>
+<li><p>add()</p>
+</li>
+<li><p>delete()  </p>
+<p>返回bool</p>
+</li>
+<li><p>has()</p>
+<p>返回bool</p>
+</li>
+<li><p>clear()</p>
+</li>
+</ul>
+<h5 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h5><p>异步编程的解决方案</p>
+<p>简单的说，是一个容器，里面保存着某个未来才会结束的事件。从语法上说，他是一个对象，从它可以获取异步操作的消息</p>
+<p>可以将异步操作以同步操作的流程表达出来，比避免了层层嵌套的回调函数。</p>
+<p>Promise 是一个构造函数，用来生成Promise实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, reject</span>)&#123;</span><br><span class="line">  <span class="keyword">if</span>(success)&#123;</span><br><span class="line">    <span class="title function_">resolve</span>(value);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_">reject</span>(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">promise.<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">value</span>)&#123;</span><br><span class="line">  <span class="comment">//success</span></span><br><span class="line">&#125;, <span class="keyword">function</span>(<span class="params">error</span>)&#123;</span><br><span class="line">  <span class="comment">//failure</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-<p>并将原来的node_modules 文件夹删除 重新npm install</p>
-<p>还未整理完整，以后添加。</p>
+<h5 id="Async"><a href="#Async" class="headerlink" title="Async"></a>Async</h5><p>使异步操作更加方便</p>
+<p>将异步操作变为同步操作</p>
+<p>放在函数前方</p>
+<p>在异步操作前加入 await</p>
+<h5 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h5><p>静态方法包含this，this指向类而不是实例</p>
+<p>静态属性</p>
+<h5 id="module"><a href="#module" class="headerlink" title="module"></a>module</h5><p>export 输出代码</p>
+<p>import 导入代码</p>
 
       
 
@@ -222,6 +602,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -272,7 +663,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/22/npminstall%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/23/js%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,8 +678,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS布局方式</div>
+    <a href="/2023/03/22/npm%20install%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">npm install 问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -412,6 +803,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">问题修复</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
