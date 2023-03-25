@@ -152,6 +152,237 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Git 上传本地文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/25/Git%20%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/">Git 相关问题</a>
+    </h1>
+  
+
+        
+        <a href="/2023/03/25/Git%20%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2023-03-25T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git-上传本地文件"><a href="#Git-上传本地文件" class="headerlink" title="Git 上传本地文件"></a>Git 上传本地文件</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>打开终端，进入想要的文件目录下</li>
+<li>git init //初始化git仓库</li>
+<li>git clone <url> //克隆下载指定地址的代码（可忽略）</li>
+<li>git add .  //将该目录所有东西传到缓存区</li>
+<li>git commit -m ”提交说明“ //将缓存区的东西传到本地仓库</li>
+<li>git romete add origin <url> //添加远程版本库</li>
+<li>git push -u origin master  //第一次推送 使用了-u</li>
+<li>git push origin master //以后可以用这个简便一点</li>
+</ol>
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><h3 id="error-failed-to-push-some-refs-to-‘https-gitee-com-git-39"><a href="#error-failed-to-push-some-refs-to-‘https-gitee-com-git-39" class="headerlink" title="error: failed to push some refs to ‘https://gitee.com/***/**.git&#39;"></a>error: failed to push some refs to ‘<a target="_blank" rel="noopener" href="https://gitee.com/***/**.git&#39;">https://gitee.com/***/**.git&#39;</a></h3><p>解决办法就是执行如下命令<br>git pull –rebase origin master<br>这个命令的就是说的 从远程仓库 clone 来的项目里包含了README.md这个文件，但是自己本地仓库里没有这个文件，于是用这个命令合并</p>
+<h3 id="error-src-refspec-master-does-not-match-any"><a href="#error-src-refspec-master-does-not-match-any" class="headerlink" title="error: src refspec master does not match any"></a>error: src refspec master does not match any</h3><p>分析：引起该错误的原因是，目录中没有文件，空目录不能提交。</p>
+<p>依次执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git push origin master12</span><br></pre></td></tr></table></figure>
+
+
+
+<p>目前这些，以后出现再增加。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/03/25/Git%20%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-React学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/25/React%E5%AD%A6%E4%B9%A0/">React学习</a>
+    </h1>
+  
+
+        
+        <a href="/2023/03/25/React%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2023-03-25T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><p>特点</p>
+<ul>
+<li>声明式UI</li>
+<li>组件化</li>
+<li>一次学习，跨平台编写</li>
+</ul>
+<h4 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h4><p>在React中创建HTML结构</p>
+<h5 id="使用js表达式"><a href="#使用js表达式" class="headerlink" title="使用js表达式"></a>使用js表达式</h5><p>{JS 表达式}</p>
+<ul>
+<li>识别常规变量</li>
+<li>原生js方法调用</li>
+<li>三元运算符</li>
+</ul>
+<h5 id="JSX-列表渲染"><a href="#JSX-列表渲染" class="headerlink" title="JSX 列表渲染"></a>JSX 列表渲染</h5><p>map 方法</p>
+<p>key仅在内部使用，不会出现在真实的dom结构中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &#123; items.map(item =&gt; &lt;li key = &#123;item.id&#125;&gt;&#123;item.name&#125;&lt;/li&gt;)&#125;</span><br><span class="line">  &lt;li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><ul>
+<li>三元运算符</li>
+<li>逻辑&amp;&amp;运算</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt; </span><br><span class="line">  &#123; flag ? &lt;span&gt;true&lt;/span&gt; : null&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt; </span><br><span class="line">  &#123; flag &amp;&amp; &lt;span&gt;true&lt;/span&gt;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//复杂情况，用函数写逻辑，模版中调用函数</span><br><span class="line">const getFlag = (type)=&gt;&#123;</span><br><span class="line">  if(type === 1)&#123;</span><br><span class="line">    return &lt;h1&gt;h1&lt;/h1&gt;</span><br><span class="line">  &#125;</span><br><span class="line">  if(type === 2)&#123;</span><br><span class="line">    return &lt;h2&gt;h2&lt;/h2&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123; getFlag(1) &#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="样式处理"><a href="#样式处理" class="headerlink" title="样式处理"></a>样式处理</h5><ul>
+<li>行内样式 - 在元素上绑定一个style属性</li>
+<li>类名样式 - 在元素上绑定一个className属性</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style = &#123;&#123;color : &quot;red&quot;&#125;&#125;&gt;11 &lt;/span&gt;</span><br><span class="line">&lt;span className = &#x27;class&#x27;&gt;11 &lt;/span&gt;</span><br><span class="line">&lt;span className = &#123;flag ? &#x27;class&#x27; :&#x27;&#x27;  &#125;&gt;11 &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li>只能有一个根节点</li>
+<li>所有标签都要闭合</li>
+<li>属性名采用驼峰</li>
+<li>支持多行 用（）包裹</li>
+</ul>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><h5 id="函数组件"><a href="#函数组件" class="headerlink" title="函数组件"></a>函数组件</h5><ul>
+<li>组件名称首字母大写</li>
+<li>必须要有返回值</li>
+<li>组件可以像HTML标签一样渲染到页面，需要闭合</li>
+</ul>
+<h5 id="类组件"><a href="#类组件" class="headerlink" title="类组件"></a>类组件</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class HelloComponent extends React.Component&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    return &lt;div&gt;class Component&lt;/div&gt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>组件名称首字母大写</li>
+<li>需要继承父类 </li>
+<li>必须要render 且有返回值</li>
+</ul>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><ul>
+<li><p>语法</p>
+</li>
+<li><p>传参</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onClick = &#123;()=&gt;&#123;console.log(111)&#125; &#125;&gt;222&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">function Hello () &#123;</span><br><span class="line">  const fun1 = (e,msg) =&gt; &#123;</span><br><span class="line">  	console.log(msg)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return &lt;div onClick = &#123;(e)=&gt;&#123;fun1(e, &quot;msg&quot;)&#125; &#125;&gt;222&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="组件状态"><a href="#组件状态" class="headerlink" title="组件状态"></a>组件状态</h4><ul>
+<li><p>定义状态必须通过state实例的方法</p>
+</li>
+<li><p>不能直接赋值，通过setState方法</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/03/25/React%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-VUE学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -336,7 +567,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题解决</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">问题</a>
         		</li>
       		
 		</ul>
@@ -867,7 +1098,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="npm-install-出现问题"><a href="#npm-install-出现问题" class="headerlink" title="npm install 出现问题"></a>npm install 出现问题</h1><h2 id="第一种-99-104-114-111-109-101-100-114-x69-118-101-x72-64-x32-46-52-x36-46-48-install-node-install-js"><a href="#第一种-99-104-114-111-109-101-100-114-x69-118-101-x72-64-x32-46-52-x36-46-48-install-node-install-js" class="headerlink" title="第一种 &#99;&#104;&#114;&#111;&#109;&#101;&#100;&#114;&#x69;&#118;&#101;&#x72;&#64;&#x32;&#46;&#52;&#x36;&#46;&#48; install: node install.js"></a>第一种 <a href="mailto:&#99;&#104;&#114;&#111;&#109;&#101;&#100;&#114;&#x69;&#118;&#101;&#x72;&#64;&#x32;&#46;&#52;&#x36;&#46;&#48;">&#99;&#104;&#114;&#111;&#109;&#101;&#100;&#114;&#x69;&#118;&#101;&#x72;&#64;&#x32;&#46;&#52;&#x36;&#46;&#48;</a> install: <code>node install.js</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno 1</span><br><span class="line">npm ERR! chromedriver@2.46.0 install: `node install.js`</span><br><span class="line">npm ERR! Exit status 1</span><br><span class="line">npm ERR!</span><br><span class="line">npm ERR! Failed at the chromedriver@2.46.0 install script.</span><br><span class="line">npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</span><br></pre></td></tr></table></figure>
+        <h1 id="npm-install-出现问题"><a href="#npm-install-出现问题" class="headerlink" title="npm install 出现问题"></a>npm install 出现问题</h1><h2 id="第一种-99-x68-114-111-109-x65-100-x72-x69-x76-101-114-64-x32-46-x34-54-46-x30-install-node-install-js"><a href="#第一种-99-x68-114-111-109-x65-100-x72-x69-x76-101-114-64-x32-46-x34-54-46-x30-install-node-install-js" class="headerlink" title="第一种 &#99;&#x68;&#114;&#111;&#109;&#x65;&#100;&#x72;&#x69;&#x76;&#101;&#114;&#64;&#x32;&#46;&#x34;&#54;&#46;&#x30; install: node install.js"></a>第一种 <a href="mailto:&#99;&#x68;&#114;&#111;&#109;&#x65;&#100;&#x72;&#x69;&#x76;&#101;&#114;&#64;&#x32;&#46;&#x34;&#54;&#46;&#x30;">&#99;&#x68;&#114;&#111;&#109;&#x65;&#100;&#x72;&#x69;&#x76;&#101;&#114;&#64;&#x32;&#46;&#x34;&#54;&#46;&#x30;</a> install: <code>node install.js</code></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno 1</span><br><span class="line">npm ERR! chromedriver@2.46.0 install: `node install.js`</span><br><span class="line">npm ERR! Exit status 1</span><br><span class="line">npm ERR!</span><br><span class="line">npm ERR! Failed at the chromedriver@2.46.0 install script.</span><br><span class="line">npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</span><br></pre></td></tr></table></figure>
 
 
 
@@ -899,7 +1130,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题修复</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">问题</a>
         		</li>
       		
 		</ul>
@@ -1042,7 +1273,7 @@
 <li>父级元素添加 overflow: hidden; clear: both;</li>
 </ul>
 </li>
-<li>伪对象方式</li>
+<li>伪对象方式 主要也是用clear</li>
 </ul>
 </li>
 </ul>
@@ -1077,17 +1308,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -1294,11 +1514,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题修复</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题解决</a>
+                <a href="javascript:void(0)" class="js-tag color3">问题</a>
               </li>
             
             <div class="clearfix"></div>
