@@ -5,23 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
-  <title>React学习 | Hexo</title>
+  <link rel="dns-prefetch" href="http://www.bmzll.xyz">
+  <title>React学习 | White Horse Village</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="React特点  声明式UI 组件化 一次学习，跨平台编写  JSX在React中创建HTML结构 使用js表达式{JS 表达式}  识别常规变量 原生js方法调用 三元运算符  JSX 列表渲染map 方法 key仅在内部使用，不会出现在真实的dom结构中 1234&lt;ul&gt;  &amp;#123; items.map(item &#x3D;&gt; &lt;li key &#x3D; &amp;#123;item.id">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React学习">
-<meta property="og:url" content="http://example.com/2023/03/25/React%E5%AD%A6%E4%B9%A0/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="http://www.bmzll.xyz/2023/03/25/React%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="White Horse Village">
 <meta property="og:description" content="React特点  声明式UI 组件化 一次学习，跨平台编写  JSX在React中创建HTML结构 使用js表达式{JS 表达式}  识别常规变量 原生js方法调用 三元运算符  JSX 列表渲染map 方法 key仅在内部使用，不会出现在真实的dom结构中 1234&lt;ul&gt;  &amp;#123; items.map(item &#x3D;&gt; &lt;li key &#x3D; &amp;#123;item.id">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-25T12:03:09.000Z">
-<meta property="article:modified_time" content="2023-03-25T09:02:22.473Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2023-03-26T12:41:11.040Z">
+<meta property="article:author" content="lele">
 <meta property="article:tag" content="前端学习">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="White Horse Village" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -241,6 +241,33 @@
 </li>
 <li><p>不能直接赋值，通过setState方法</p>
 </li>
+<li><p>不要直接修改状态的值，而是基于当前状态创建新的状态值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">	count: this.state.count + 1,</span><br><span class="line">  //add</span><br><span class="line">	list: [...this.state.list, 4],</span><br><span class="line">  //delete</span><br><span class="line">  list: this.state.list.filter((item) =&gt; item != 2)</span><br><span class="line">  people:&#123;</span><br><span class="line">    ...this.state.people,</span><br><span class="line">    //重新覆盖</span><br><span class="line">    name: &quot;newName&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="表单组件"><a href="#表单组件" class="headerlink" title="表单组件"></a>表单组件</h4><ul>
+<li><p>受控组件</p>
+<p>input框自己的状态被React组件状态控制</p>
+</li>
+<li><p>非受控组件</p>
+<p>通过dom方式获取文本值</p>
+</li>
+</ul>
+<h4 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h4><p> 组件之间数据交流</p>
+<ul>
+<li><p><strong>父传子</strong></p>
+<p>class : this.props.msg</p>
+<p>function: props.msg</p>
+<p>props 是只读的，可以传递任何数据，可以解构赋值</p>
+<ul>
+<li>子传父 - 子调用父的函数，把数据作为参数传入。</li>
+</ul>
+</li>
+<li><p>兄弟互传 - 自定义事件模式产生技术方法eventBus / 通过父组件 </p>
+</li>
+<li><p>其他关系 - mobx / redux / 基于hook的方案</p>
+</li>
+<li><p>context</p>
+</li>
 </ul>
 
       
@@ -332,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/25/React%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.bmzll.xyz/2023/03/25/React%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -400,7 +427,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 John Doe
+    		&copy; 2023 lele
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
