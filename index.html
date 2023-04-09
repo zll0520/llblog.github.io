@@ -152,48 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-2023-04-07-同向双指针-滑动窗口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-相向双指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/07/2023-04-07-%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">同向双指针 滑动窗口</a>
+      <a class="article-title" href="/2023/04/08/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/">相向双指针</a>
     </h1>
   
 
         
-        <a href="/2023/04/07/2023-04-07-%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2023-04-07T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-07</time>
+        <a href="/2023/04/08/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/" class="archive-article-date">
+  	<time datetime="2023-04-08T12:26:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>使用前提，单调性</p>
-</blockquote>
-<h4 id="209、长度最小的子数组"><a href="#209、长度最小的子数组" class="headerlink" title="209、长度最小的子数组"></a>209、长度最小的子数组</h4><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
-<p>找出该数组中满足其和 <code>≥ target</code> 的长度最小的 <strong>连续子数组</strong> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
-<h5 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h5><p>移动右端点，逐渐缩小左端点</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = n + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> right = <span class="number">0</span>; right &lt; nums.<span class="built_in">size</span>(); ++ right)&#123;</span><br><span class="line">            num += nums[right];</span><br><span class="line">            <span class="keyword">while</span>(num &gt;= target)&#123;</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, right - left + <span class="number">1</span>);</span><br><span class="line">                num -= nums[left];</span><br><span class="line">                left ++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == n + <span class="number">1</span> ? <span class="number">0</span> : ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h4 id="167、两数之和-II-输入有序数组"><a href="#167、两数之和-II-输入有序数组" class="headerlink" title="167、两数之和 II - 输入有序数组"></a>167、两数之和 II - 输入有序数组</h4><p>[两数之和 II - 输入有序数组][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/]">https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/]</a></p>
+<p>给你一个下标从 <strong>1</strong> 开始的整数数组 <code>numbers</code> ，该数组已按 <strong>非递减顺序排列</strong> ，请你从数组中找出满足相加之和等于目标数 <code>target</code> 的两个数。如果设这两个数分别是 <code>numbers[index1]</code> 和 <code>numbers[index2]</code> ，则 <code>1 &lt;= index1 &lt; index2 &lt;= numbers.length</code> 。</p>
+<p>以长度为 2 的整数数组 <code>[index1, index2]</code> 的形式返回这两个整数的下标 <code>index1</code> 和 <code>index2</code>。</p>
+<p>你可以假设每个输入 <strong>只对应唯一的答案</strong> ，而且你 <strong>不可以</strong> 重复使用相同的元素。</p>
+<p>你所设计的解决方案必须只使用常量级的额外空间。</p>
+<h5 id="暴力–两重循环"><a href="#暴力–两重循环" class="headerlink" title="暴力–两重循环"></a>暴力–两重循环</h5><p>O(n^2)</p>
+<h5 id="利用有序"><a href="#利用有序" class="headerlink" title="利用有序"></a>利用有序</h5><p>O(n)</p>
+<p>利用两个变量（L， R）指向当前最小和最大的树，与目标数比较。如果大于，去掉最大的（L右移），小于，去掉最小的数（R左移）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; numbers, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r = numbers.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="type">int</span> num = numbers[l] + numbers[r];</span><br><span class="line">            <span class="keyword">if</span>(num == target)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(num &lt; target)&#123;</span><br><span class="line">                l ++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                r --;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> &#123;l + <span class="number">1</span>, r + <span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="713、乘积小于-K-的子数组"><a href="#713、乘积小于-K-的子数组" class="headerlink" title="713、乘积小于 K 的子数组"></a>713、乘积小于 K 的子数组</h4><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你返回子数组内所有元素的乘积严格小于 <code>k</code> 的连续子数组的数目。</p>
-<h5 id="滑动窗口-1"><a href="#滑动窗口-1" class="headerlink" title="滑动窗口"></a>滑动窗口</h5><p>固定右端点</p>
-<p>从左往右检查，符合时，直接增加<code>r-l+1</code></p>
- <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numSubarrayProductLessThanK</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> num = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(k &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> right = <span class="number">0</span>; right &lt; nums.<span class="built_in">size</span>(); ++ right)&#123;</span><br><span class="line">            num *= nums[right];</span><br><span class="line">            <span class="keyword">while</span>(num &gt;= k)&#123;</span><br><span class="line">                num /= nums[left];</span><br><span class="line">                left ++;</span><br><span class="line">            &#125;</span><br><span class="line">            ans += right - left + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="15、三数之和"><a href="#15、三数之和" class="headerlink" title="15、三数之和"></a>15、三数之和</h4><p>[三数之和][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum/]">https://leetcode.cn/problems/3sum/]</a></p>
+<p>给你一个整数数组 <code>nums</code> ，判断是否存在三元组 <code>[nums[i], nums[j], nums[k]]</code> 满足 <code>i != j</code>、<code>i != k</code> 且 <code>j != k</code> ，同时还满足 <code>nums[i] + nums[j] + nums[k] == 0</code> 。请</p>
+<p>你返回所有和为 <code>0</code> 且不重复的三元组。</p>
+<p><strong>注意：</strong>答案中不可以包含重复的三元组。</p>
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>O(n^2)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">2</span>; ++ i)&#123;</span><br><span class="line">            <span class="comment">//如果重复，直接下一组</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> x = nums[i];</span><br><span class="line">            <span class="type">int</span> l = i + <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> r = n - <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//最小组合都大于0，直接退出</span></span><br><span class="line">            <span class="keyword">if</span>(x + nums[i + <span class="number">1</span>] + nums[i + <span class="number">2</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//当前最大组合都小于0，结束当前的循环</span></span><br><span class="line">            <span class="keyword">if</span>(x + nums[n - <span class="number">1</span>] + nums[n - <span class="number">2</span>] &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">                <span class="type">int</span> num = x + nums[l] + nums[r];</span><br><span class="line">                <span class="keyword">if</span>(num &lt; <span class="number">0</span>)&#123;</span><br><span class="line">                    l ++;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    r --;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    ans.<span class="built_in">push_back</span>(&#123;x, nums[l], nums[r]&#125;);</span><br><span class="line">                    l ++;</span><br><span class="line">                    <span class="keyword">while</span>(l &lt; r &amp;&amp; nums[l] == nums[l - <span class="number">1</span>])&#123;</span><br><span class="line">                        l ++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    r --;</span><br><span class="line">                    <span class="keyword">while</span>(l &lt; r &amp;&amp; nums[r] == nums[r + <span class="number">1</span>])&#123;</span><br><span class="line">                        r --;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
+<h4 id="11、盛最多水的容器"><a href="#11、盛最多水的容器" class="headerlink" title="11、盛最多水的容器"></a>11、盛最多水的容器</h4><p>[盛最多水的容器][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/container-with-most-water/]">https://leetcode.cn/problems/container-with-most-water/]</a></p>
+<p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p>
+<p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
+<p>返回容器可以储存的最大水量。</p>
+<p><strong>说明：</strong>你不能倾斜容器。</p>
+<h5 id="相向双指针"><a href="#相向双指针" class="headerlink" title="相向双指针"></a>相向双指针</h5><p>O(n)</p>
+<p>取两个指针指向两边，由于长度必定会缩短，所以如果想面积增大，则需要更矮的一边去寻找比它高的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxArea</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = height.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r = n - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> area = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            area = <span class="built_in">min</span>(height[l], height[r]) * (r - l);</span><br><span class="line">            ans = <span class="built_in">max</span>(area, ans);</span><br><span class="line">            <span class="keyword">if</span>(height[r] &lt; height[l])&#123;</span><br><span class="line">                r --;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
-<h4 id="3、-无重复字符的最长子串"><a href="#3、-无重复字符的最长子串" class="headerlink" title="3、 无重复字符的最长子串"></a>3、 无重复字符的最长子串</h4><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
-<h4 id="滑动窗口-2"><a href="#滑动窗口-2" class="headerlink" title="滑动窗口"></a>滑动窗口</h4><p>用哈希表记录字符出现次数，枚举右端点，如果出现次数大于1，右移左端点，没有大于1，记录答案</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; myMap;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> r = <span class="number">0</span>; r &lt; s.<span class="built_in">size</span>(); ++ r)&#123;</span><br><span class="line">            </span><br><span class="line">            myMap[s[r]] ++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(myMap[s[r]] &gt; <span class="number">1</span>)&#123;</span><br><span class="line">                myMap[s[l]] --;</span><br><span class="line">                l ++;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, r - l + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="42、接雨水"><a href="#42、接雨水" class="headerlink" title="42、接雨水"></a>42、接雨水</h5><p>[接雨水][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/]">https://leetcode.cn/problems/trapping-rain-water/]</a></p>
+<p>[][]</p>
+<p>给定 <code>n</code> 个非负整数表示每个宽度为 <code>1</code> 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
+<h5 id="前后缀分解"><a href="#前后缀分解" class="headerlink" title="前后缀分解"></a>前后缀分解</h5><p>时间复杂度 O(n)</p>
+<p>空间复杂度 O(n)</p>
+<p>新建两个数组，第一个为前缀的最大高度，第二个为后缀最大高度，计算一个点的储水为，当前两个高度数组的较小值减去这个点的高度</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">trap</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = height.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">pre_max</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">suf_max</span><span class="params">(n, <span class="number">0</span>)</span></span>;</span><br><span class="line">        pre_max[<span class="number">0</span>] = height[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; ++ i)&#123;</span><br><span class="line">            pre_max[i] = <span class="built_in">max</span>(pre_max[i - <span class="number">1</span>], height[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        suf_max[n - <span class="number">1</span>] = height[n <span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; -- i)&#123;</span><br><span class="line">            suf_max[i] = <span class="built_in">max</span>(height[i], suf_max[i + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++ i)&#123;</span><br><span class="line">            ans += (<span class="built_in">min</span>(pre_max[i], suf_max[i]) - height[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="相向双指针-1"><a href="#相向双指针-1" class="headerlink" title="相向双指针"></a>相向双指针</h5><p>时间复杂度 O(n)</p>
+<p>空间复杂度 O(1)</p>
+<p>创建两个指针(L, R) ，两个变量分别存储前缀最大和后缀最大，由于最大值只会变大，不会减小，我们可以比较在左右元素的前缀最大和后缀最大。</p>
+<p>对于左边的元素来说，如果前缀最大小于后缀最大，那么他的容积就已经可以确定，因为总是取小的那个，此时L就可以右移，并更新前缀最大。</p>
+<p>对右边元素同理。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">trap</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = height.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r = n - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> pre_max = height[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span> suf_max = height[r];</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pre_max &lt; suf_max)&#123;</span><br><span class="line">                ans += <span class="built_in">min</span>(pre_max, suf_max) - height[l];</span><br><span class="line">                l ++;</span><br><span class="line">                pre_max = <span class="built_in">max</span>(height[l], pre_max);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                ans += <span class="built_in">min</span>(pre_max, suf_max) - height[r];</span><br><span class="line">                r --;</span><br><span class="line">                suf_max = <span class="built_in">max</span>(height[r], suf_max);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
 
 
       
@@ -208,7 +236,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -218,7 +246,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2023/04/07/2023-04-07-%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">展开全文 >></a>
+          <a class="article-more-a" href="/2023/04/08/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/">展开全文 >></a>
         </p>
       
 
@@ -298,7 +326,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -309,6 +337,102 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2023/04/07/%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-同向双指针-滑动窗口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/07/%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">同向双指针 滑动窗口</a>
+    </h1>
+  
+
+        
+        <a href="/2023/04/07/%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="archive-article-date">
+  	<time datetime="2023-04-07T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>使用前提，单调性</p>
+</blockquote>
+<h4 id="209、长度最小的子数组"><a href="#209、长度最小的子数组" class="headerlink" title="209、长度最小的子数组"></a>209、长度最小的子数组</h4><p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
+<p>找出该数组中满足其和 <code>≥ target</code> 的长度最小的 <strong>连续子数组</strong> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+<h5 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h5><p>移动右端点，逐渐缩小左端点</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> ans = n + <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> right = <span class="number">0</span>; right &lt; nums.<span class="built_in">size</span>(); ++ right)&#123;</span><br><span class="line">            num += nums[right];</span><br><span class="line">            <span class="keyword">while</span>(num &gt;= target)&#123;</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, right - left + <span class="number">1</span>);</span><br><span class="line">                num -= nums[left];</span><br><span class="line">                left ++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == n + <span class="number">1</span> ? <span class="number">0</span> : ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="713、乘积小于-K-的子数组"><a href="#713、乘积小于-K-的子数组" class="headerlink" title="713、乘积小于 K 的子数组"></a>713、乘积小于 K 的子数组</h4><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你返回子数组内所有元素的乘积严格小于 <code>k</code> 的连续子数组的数目。</p>
+<h5 id="滑动窗口-1"><a href="#滑动窗口-1" class="headerlink" title="滑动窗口"></a>滑动窗口</h5><p>固定右端点</p>
+<p>从左往右检查，符合时，直接增加<code>r-l+1</code></p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numSubarrayProductLessThanK</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> num = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(k &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> right = <span class="number">0</span>; right &lt; nums.<span class="built_in">size</span>(); ++ right)&#123;</span><br><span class="line">            num *= nums[right];</span><br><span class="line">            <span class="keyword">while</span>(num &gt;= k)&#123;</span><br><span class="line">                num /= nums[left];</span><br><span class="line">                left ++;</span><br><span class="line">            &#125;</span><br><span class="line">            ans += right - left + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="3、-无重复字符的最长子串"><a href="#3、-无重复字符的最长子串" class="headerlink" title="3、 无重复字符的最长子串"></a>3、 无重复字符的最长子串</h4><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
+<h4 id="滑动窗口-2"><a href="#滑动窗口-2" class="headerlink" title="滑动窗口"></a>滑动窗口</h4><p>用哈希表记录字符出现次数，枚举右端点，如果出现次数大于1，右移左端点，没有大于1，记录答案</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; myMap;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> r = <span class="number">0</span>; r &lt; s.<span class="built_in">size</span>(); ++ r)&#123;</span><br><span class="line">            </span><br><span class="line">            myMap[s[r]] ++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(myMap[s[r]] &gt; <span class="number">1</span>)&#123;</span><br><span class="line">                myMap[s[l]] --;</span><br><span class="line">                l ++;</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, r - l + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/04/07/%E5%90%8C%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">展开全文 >></a>
         </p>
       
 
@@ -1712,178 +1836,6 @@
 
 
   
-    <article id="post-CSS布局方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/">CSS布局方式</a>
-    </h1>
-  
-
-        
-        <a href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2023-03-21T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="CSS布局方式"><a href="#CSS布局方式" class="headerlink" title="CSS布局方式"></a>CSS布局方式</h2><h3 id="CSS盒子模型-（box-model）"><a href="#CSS盒子模型-（box-model）" class="headerlink" title="CSS盒子模型 （box model）"></a>CSS盒子模型 （box model）</h3><p>传统模型</p>
-<ul>
-<li>外边距 margin<ul>
-<li>透明的，不会撑大整个box</li>
-</ul>
-</li>
-<li>边框 broder</li>
-<li>内边距 padding <ul>
-<li>会撑大整个box</li>
-</ul>
-</li>
-<li>内容 content</li>
-</ul>
-<h3 id="CSS-弹性盒子模型-（flex-model）"><a href="#CSS-弹性盒子模型-（flex-model）" class="headerlink" title="CSS 弹性盒子模型 （flex model）"></a>CSS 弹性盒子模型 （flex model）</h3><p>新的布局样式，适合小程序</p>
-<p>当页面需要适应不同屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式</p>
-<ul>
-<li><p>弹性容器 （flex container）</p>
-<ul>
-<li>通过display: flex 来定义为弹性容器</li>
-<li>弹性容器外以及弹性元素内是正常渲染的。弹性盒子只定义了弹性子元素如何在弹性容器内布局</li>
-<li>默认弹性盒内容横向摆放</li>
-</ul>
-<p>flex-direction 布局方向</p>
-<ul>
-<li>row  横行排列</li>
-<li>row-reverse  反转横行</li>
-<li>column  纵向排列</li>
-<li>column-reverse 反转纵向</li>
-</ul>
-<p>justify-content 垂直方向上的摆放</p>
-<ul>
-<li>flex-start 靠上</li>
-<li>flex-end 靠下</li>
-<li>center 居中</li>
-</ul>
-<p>align-items 水平方向上的摆放</p>
-<ul>
-<li>flex-start 靠左</li>
-<li>flex-end 靠右</li>
-<li>center 居中</li>
-</ul>
-</li>
-<li><p>弹性子元素（flex item）</p>
-<ul>
-<li><p>flex-grow/flex</p>
-<p>根据弹性盒子元素所设置的扩展因子作为比率来分配空间</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><p>标准流有些问题</p>
-<ul>
-<li>高矮不齐，底边对齐</li>
-<li>空白折叠</li>
-</ul>
-<p>如何脱离标准文档流</p>
-<ul>
-<li><p>浮动</p>
-<ul>
-<li><p>float</p>
-<ul>
-<li><p> 浮动以后元素脱离文档流</p>
-</li>
-<li><p>浮动只有左右浮动，没有上下浮动</p>
-</li>
-<li><p>脱离文档流，相当于在页面上增加一个浮层来放置内容，此时可以理解为有两层界面，所以会有折叠效果</p>
-</li>
-</ul>
-</li>
-<li><p>浮动的缺点</p>
-<ul>
-<li>造成父元素高度塌陷</li>
-<li> 后续元素也会受到影响</li>
-</ul>
-</li>
-<li><p>清除浮动</p>
-<ul>
-<li>父元素设置高度</li>
-<li>受影响元素添加 clear属性（left，right，both）</li>
-<li>overflow 清除浮动<ul>
-<li>父级元素添加 overflow: hidden; clear: both;</li>
-</ul>
-</li>
-<li>伪对象方式 主要也是用clear</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>绝对定位</p>
-</li>
-<li><p>固定定位</p>
-</li>
-</ul>
-<h3 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 position</h3><p>设置定位后，相对定位和绝对定位是相对于有定位的父级元素定位，如果父级元素不存在定位，会向上逐级寻找，直至顶层文档。 </p>
-<ul>
-<li>relative 相对定位<ul>
-<li>还在标准流中</li>
-</ul>
-</li>
-<li>absolute 绝对定位<ul>
-<li>脱离标准流</li>
-</ul>
-</li>
-<li> flxed 固定定位</li>
-<li>不会随着页面滚动变化</li>
-<li>Z-index<ul>
-<li>设置显示顺序</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1989,7 +1941,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

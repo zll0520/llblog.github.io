@@ -152,6 +152,178 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS布局方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/">CSS布局方式</a>
+    </h1>
+  
+
+        
+        <a href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2023-03-21T12:03:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS布局方式"><a href="#CSS布局方式" class="headerlink" title="CSS布局方式"></a>CSS布局方式</h2><h3 id="CSS盒子模型-（box-model）"><a href="#CSS盒子模型-（box-model）" class="headerlink" title="CSS盒子模型 （box model）"></a>CSS盒子模型 （box model）</h3><p>传统模型</p>
+<ul>
+<li>外边距 margin<ul>
+<li>透明的，不会撑大整个box</li>
+</ul>
+</li>
+<li>边框 broder</li>
+<li>内边距 padding <ul>
+<li>会撑大整个box</li>
+</ul>
+</li>
+<li>内容 content</li>
+</ul>
+<h3 id="CSS-弹性盒子模型-（flex-model）"><a href="#CSS-弹性盒子模型-（flex-model）" class="headerlink" title="CSS 弹性盒子模型 （flex model）"></a>CSS 弹性盒子模型 （flex model）</h3><p>新的布局样式，适合小程序</p>
+<p>当页面需要适应不同屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式</p>
+<ul>
+<li><p>弹性容器 （flex container）</p>
+<ul>
+<li>通过display: flex 来定义为弹性容器</li>
+<li>弹性容器外以及弹性元素内是正常渲染的。弹性盒子只定义了弹性子元素如何在弹性容器内布局</li>
+<li>默认弹性盒内容横向摆放</li>
+</ul>
+<p>flex-direction 布局方向</p>
+<ul>
+<li>row  横行排列</li>
+<li>row-reverse  反转横行</li>
+<li>column  纵向排列</li>
+<li>column-reverse 反转纵向</li>
+</ul>
+<p>justify-content 垂直方向上的摆放</p>
+<ul>
+<li>flex-start 靠上</li>
+<li>flex-end 靠下</li>
+<li>center 居中</li>
+</ul>
+<p>align-items 水平方向上的摆放</p>
+<ul>
+<li>flex-start 靠左</li>
+<li>flex-end 靠右</li>
+<li>center 居中</li>
+</ul>
+</li>
+<li><p>弹性子元素（flex item）</p>
+<ul>
+<li><p>flex-grow/flex</p>
+<p>根据弹性盒子元素所设置的扩展因子作为比率来分配空间</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><p>标准流有些问题</p>
+<ul>
+<li>高矮不齐，底边对齐</li>
+<li>空白折叠</li>
+</ul>
+<p>如何脱离标准文档流</p>
+<ul>
+<li><p>浮动</p>
+<ul>
+<li><p>float</p>
+<ul>
+<li><p> 浮动以后元素脱离文档流</p>
+</li>
+<li><p>浮动只有左右浮动，没有上下浮动</p>
+</li>
+<li><p>脱离文档流，相当于在页面上增加一个浮层来放置内容，此时可以理解为有两层界面，所以会有折叠效果</p>
+</li>
+</ul>
+</li>
+<li><p>浮动的缺点</p>
+<ul>
+<li>造成父元素高度塌陷</li>
+<li> 后续元素也会受到影响</li>
+</ul>
+</li>
+<li><p>清除浮动</p>
+<ul>
+<li>父元素设置高度</li>
+<li>受影响元素添加 clear属性（left，right，both）</li>
+<li>overflow 清除浮动<ul>
+<li>父级元素添加 overflow: hidden; clear: both;</li>
+</ul>
+</li>
+<li>伪对象方式 主要也是用clear</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>绝对定位</p>
+</li>
+<li><p>固定定位</p>
+</li>
+</ul>
+<h3 id="定位-position"><a href="#定位-position" class="headerlink" title="定位 position"></a>定位 position</h3><p>设置定位后，相对定位和绝对定位是相对于有定位的父级元素定位，如果父级元素不存在定位，会向上逐级寻找，直至顶层文档。 </p>
+<ul>
+<li>relative 相对定位<ul>
+<li>还在标准流中</li>
+</ul>
+</li>
+<li>absolute 绝对定位<ul>
+<li>脱离标准流</li>
+</ul>
+</li>
+<li> flxed 固定定位</li>
+<li>不会随着页面滚动变化</li>
+<li>Z-index<ul>
+<li>设置显示顺序</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/03/21/CSS%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -332,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
