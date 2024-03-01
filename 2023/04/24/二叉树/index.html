@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.bmzll.xyz">
-  <title>二叉树-递归 | White Horse Village</title>
+  <title>二叉树 | White Horse Village</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="104、二叉树的最大深度[二叉树的最大深度][https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;maximum-depth-of-binary-tree&#x2F;] 给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 时间复杂度 O(n) 空间复杂度 O(n) 12345678910111213141516171819">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树-递归">
-<meta property="og:url" content="http://www.bmzll.xyz/2023/04/20/%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%80%92%E5%BD%92/index.html">
+<meta property="og:title" content="二叉树">
+<meta property="og:url" content="http://www.bmzll.xyz/2023/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="White Horse Village">
 <meta property="og:description" content="104、二叉树的最大深度[二叉树的最大深度][https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;maximum-depth-of-binary-tree&#x2F;] 给定一个二叉树，找出其最大深度。 二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。 说明: 叶子节点是指没有子节点的节点。 时间复杂度 O(n) 空间复杂度 O(n) 12345678910111213141516171819">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-04-20T13:05:41.000Z">
-<meta property="article:modified_time" content="2023-04-20T13:52:44.076Z">
+<meta property="article:published_time" content="2023-04-24T13:05:41.000Z">
+<meta property="article:modified_time" content="2023-04-24T13:42:33.068Z">
 <meta property="article:author" content="lele">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
@@ -155,20 +155,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-二叉树-递归" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-二叉树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      二叉树-递归
+      二叉树
     </h1>
   
 
         
-        <a href="/2023/04/20/%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%80%92%E5%BD%92/" class="archive-article-date">
-  	<time datetime="2023-04-20T13:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-20</time>
+        <a href="/2023/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2023-04-24T13:05:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-24</time>
 </a>
         
       </header>
@@ -209,6 +209,29 @@
 <h4 id="199、二叉树的右视图"><a href="#199、二叉树的右视图" class="headerlink" title="199、二叉树的右视图"></a>199、二叉树的右视图</h4><p>[二叉树的右视图][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-right-side-view/]">https://leetcode.cn/problems/binary-tree-right-side-view/]</a></p>
 <p>给定一个二叉树的 <strong>根节点</strong> <code>root</code>，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(TreeNode* root, <span class="type">int</span> deep)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(deep == ans.<span class="built_in">size</span>())&#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(root-&gt;val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">dfs</span>(root-&gt;right, deep + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">dfs</span>(root-&gt;left, deep + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">rightSideView</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">dfs</span>(root, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="236、-二叉树的最近公共祖先-https-leetcode-cn-problems-lowest-common-ancestor-of-a-binary-tree"><a href="#236、-二叉树的最近公共祖先-https-leetcode-cn-problems-lowest-common-ancestor-of-a-binary-tree" class="headerlink" title="236、[二叉树的最近公共祖先][https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/]"></a>236、[二叉树的最近公共祖先][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/]">https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/]</a></h4><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin">百度百科</a>中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
+<p>分类讨论</p>
+<p>当前节点为空 返回当前</p>
+<p>当前为q 返回当前</p>
+<p>当前为p 返回当前</p>
+<p>左右子树都有 返回当前</p>
+<p>只有右有 返回右边的节点</p>
+<p>只有左有 返回左边的节点</p>
+<p>都没有 返回空</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == p || root == q || root == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode* left = <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        TreeNode* right = <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        <span class="keyword">if</span>(left != <span class="literal">NULL</span> &amp;&amp; right != <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(left == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="235、-二叉搜索树的最近公共祖先-https-leetcode-cn-problems-lowest-common-ancestor-of-a-binary-search-tree"><a href="#235、-二叉搜索树的最近公共祖先-https-leetcode-cn-problems-lowest-common-ancestor-of-a-binary-search-tree" class="headerlink" title="235、[二叉搜索树的最近公共祖先][https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/]"></a>235、[二叉搜索树的最近公共祖先][<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/]">https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/]</a></h4><p>给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/8918834?fr=aladdin">百度百科</a>中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（<strong>一个节点也可以是它自己的祖先</strong>）。”</p>
+<p>例如，给定如下二叉搜索树: root = [6,2,8,0,4,7,9,null,null,3,5]</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> x = root-&gt;val;</span><br><span class="line">        <span class="type">int</span> p_v = p-&gt;val;</span><br><span class="line">        <span class="type">int</span> q_v = q-&gt;val;</span><br><span class="line">        <span class="keyword">if</span>(q_v &lt; x &amp;&amp; p_v &lt; x)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">lowestCommonAncestor</span>(root-&gt;left, p, q);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(q_v &gt; x &amp;&amp; p_v &gt; x)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">lowestCommonAncestor</span>(root-&gt;right, p, q);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -300,7 +323,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.bmzll.xyz/2023/04/20/%E4%BA%8C%E5%8F%89%E6%A0%91-%E9%80%92%E5%BD%92/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.bmzll.xyz/2023/04/24/%E4%BA%8C%E5%8F%89%E6%A0%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,9 +337,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2023/04/25/%E5%9B%9E%E6%BA%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          回溯
+        
+      </div>
+    </a>
   
-    <a href="/2023/04/18/js%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js基础</div>
+  
+    <a href="/2023/04/21/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二叉搜索树</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -359,7 +391,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2023 lele
+    		&copy; 2024 lele
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -451,6 +483,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">后端学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端 [webpack学习--原理.md](webpack学习--原理.md) 学习</a>
               </li>
             
             <div class="clearfix"></div>
