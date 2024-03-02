@@ -16,7 +16,7 @@
 <meta property="og:description" content="VUE 学习123456789101112131415export default&amp;#123;	name: &amp;#x27;hello&amp;#x27;,	data()&amp;#123;    return&amp;#123;      message: &quot;111&quot;    &amp;#125;  &amp;#125;,  methods:&amp;#123;  	fun1(event)&amp;#123;      &#x2F;&#x2F;在事件中，读">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-24T12:03:09.000Z">
-<meta property="article:modified_time" content="2024-03-01T07:34:54.237Z">
+<meta property="article:modified_time" content="2024-03-01T12:07:52.673Z">
 <meta property="article:author" content="lele">
 <meta property="article:tag" content="前端学习">
 <meta name="twitter:card" content="summary">
@@ -181,30 +181,30 @@
 
 
 
-<h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h4><h5 id="文本插值"><a href="#文本插值" class="headerlink" title="文本插值"></a>文本插值</h5>
+<h4 id="1、模板语法"><a href="#1、模板语法" class="headerlink" title="1、模板语法"></a>1、模板语法</h4><h5 id="文本插值"><a href="#文本插值" class="headerlink" title="文本插值"></a>文本插值</h5>
 
 <p>支持单个js表达式</p>
 <p>在textarea中不支持，使用v-model</p>
-<h5 id="原始HTML"><a href="#原始HTML" class="headerlink" title="原始HTML"></a>原始HTML</h5><p>渲染标签</p>
+<h5 id="1-1-原始HTML"><a href="#1-1-原始HTML" class="headerlink" title="1.1 原始HTML"></a>1.1 原始HTML</h5><p>渲染标签</p>
 <p>v-html </p>
 <p>不能修改属性</p>
 <p>v-bind </p>
 <p>修改属性 可以简写成 :</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;text&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;div v-html = &quot;text&quot;&gt; &lt;/div&gt;</span><br><span class="line">&lt;div v-bind:id = &quot;id&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div :id = &quot;id&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h4><p>v-for</p>
+<h4 id="2、列表渲染"><a href="#2、列表渲染" class="headerlink" title="2、列表渲染"></a>2、列表渲染</h4><p>v-for</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li v-for = &quot;item in items&quot; :key = &quot;item.id&quot;&gt;&#123;&#123;item&#125;&#125; &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<h5 id="维护状态"><a href="#维护状态" class="headerlink" title="维护状态"></a>维护状态</h5><p>就地策略</p>
+<h5 id="2-1-维护状态"><a href="#2-1-维护状态" class="headerlink" title="2.1 维护状态"></a>2.1 维护状态</h5><p>就地策略</p>
 <p>通过key比对每个数据</p>
-<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h4><p>v-on / @</p>
+<h4 id="3、事件处理"><a href="#3、事件处理" class="headerlink" title="3、事件处理"></a>3、事件处理</h4><p>v-on / @</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click = &quot;fun1&quot;&gt; &lt;/button&gt;</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h4><p>v-model 双向绑定数据</p>
+<h4 id="4、表单输入绑定"><a href="#4、表单输入绑定" class="headerlink" title="4、表单输入绑定"></a>4、表单输入绑定</h4><p>v-model 双向绑定数据</p>
 <ul>
 <li><p>.lazy </p>
 <p>在change后获取</p>
@@ -216,15 +216,15 @@
 <p>自动转换为数字</p>
 </li>
 </ul>
-<h4 id="computer计算属性"><a href="#computer计算属性" class="headerlink" title="computer计算属性"></a>computer计算属性</h4><p>是一个属性，封装一个计算过程</p>
-<h4 id="watch监听函数"><a href="#watch监听函数" class="headerlink" title="watch监听函数"></a>watch监听函数</h4><p>当数据修改就会执行</p>
-<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><ul>
+<h4 id="5、computer计算属性"><a href="#5、computer计算属性" class="headerlink" title="5、computer计算属性"></a>5、computer计算属性</h4><p>是一个属性，封装一个计算过程</p>
+<h4 id="6、watch监听函数"><a href="#6、watch监听函数" class="headerlink" title="6、watch监听函数"></a>6、watch监听函数</h4><p>当数据修改就会执行</p>
+<h4 id="7、生命周期"><a href="#7、生命周期" class="headerlink" title="7、生命周期"></a>7、生命周期</h4><ul>
 <li>创建</li>
 <li>挂载</li>
 <li>更新</li>
 <li>销毁</li>
 </ul>
-<h4 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h4><p>三大组成部分</p>
+<h4 id="8、组件基础"><a href="#8、组件基础" class="headerlink" title="8、组件基础"></a>8、组件基础</h4><p>三大组成部分</p>
 <ul>
 <li><p>结构</p>
 <p>只有一个根元素（vue2）</p>
@@ -243,7 +243,7 @@
 
 
 
-<h5 id="组件化开发与根组件"><a href="#组件化开发与根组件" class="headerlink" title="组件化开发与根组件"></a>组件化开发与根组件</h5><h5 id="局部组件和全局组件"><a href="#局部组件和全局组件" class="headerlink" title="局部组件和全局组件"></a>局部组件和全局组件</h5><h5 id="组件样式"><a href="#组件样式" class="headerlink" title="组件样式"></a>组件样式</h5><ul>
+<h5 id="8-1-组件化开发与根组件"><a href="#8-1-组件化开发与根组件" class="headerlink" title="8.1 组件化开发与根组件"></a>8.1 组件化开发与根组件</h5><h5 id="8-2-局部组件和全局组件"><a href="#8-2-局部组件和全局组件" class="headerlink" title="8.2 局部组件和全局组件"></a>8.2 局部组件和全局组件</h5><h5 id="8-3-组件样式"><a href="#8-3-组件样式" class="headerlink" title="8.3 组件样式"></a>8.3 组件样式</h5><ul>
 <li><p>默认的style样式，会作用于全局</p>
 </li>
 <li><p>加上scoped属性的style样式，只会作用于当前组件</p>
@@ -255,20 +255,14 @@
 </ul>
 </li>
 </ul>
-<h5 id="data是一个函数"><a href="#data是一个函数" class="headerlink" title="data是一个函数"></a>data是一个函数</h5><p>一个组件的dta选项必须是一个函数。保证每个组件实例，维护独立的一份数据对象。</p>
+<h5 id="8-4-data是一个函数"><a href="#8-4-data是一个函数" class="headerlink" title="8.4 data是一个函数"></a>8.4 data是一个函数</h5><p>一个组件的dta选项必须是一个函数。保证每个组件实例，维护独立的一份数据对象。</p>
 <p>每次创建新的组件实例，都会新执行一次data函数，得到一个新对象。</p>
-<h5 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件</h5><p>包含模版，逻辑和样式</p>
-<h5 id="加载组件"><a href="#加载组件" class="headerlink" title="加载组件"></a>加载组件</h5><ul>
-<li>引入</li>
-<li>挂载</li>
-<li>显示</li>
-</ul>
-<h4 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h4><p>组件数据是独立的，无法直接使用其他组件的数据</p>
+<h4 id="9、组件通信"><a href="#9、组件通信" class="headerlink" title="9、组件通信"></a>9、组件通信</h4><p>组件数据是独立的，无法直接使用其他组件的数据</p>
 <ul>
 <li>父子关系</li>
 <li>非父子关系</li>
 </ul>
-<h5 id="父子关系"><a href="#父子关系" class="headerlink" title="父子关系"></a>父子关系</h5><ul>
+<h5 id="9-1-父子关系"><a href="#9-1-父子关系" class="headerlink" title="9.1 父子关系"></a>9.1 父子关系</h5><ul>
 <li><p>父传子 </p>
 <p>props</p>
 <p>数组和对象必须使用工厂模式进行返回</p>
@@ -277,7 +271,7 @@
 <p>$emit</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 子组件--&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  我是&#123;&#123;title&#125;&#125;</span><br><span class="line">  &lt;button @click=&quot;handleClick&quot;&gt;22&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default&#123;</span><br><span class="line">	props:[&#x27;title&#x27;]</span><br><span class="line">  methods:&#123;</span><br><span class="line">  	handleClick()&#123;</span><br><span class="line">      this.$emit(&#x27;changeTitle&#x27;, xxx)</span><br><span class="line">    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 父组件--&gt;</span><br><span class="line"></span><br><span class="line">&lt;Son :title = &quot;myTitle&quot; @changeTitle = &#x27;changeFn&#x27;&gt;&lt;/Son&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        myTitle: xxx</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">    	changeFn(newTitle)&#123;</span><br><span class="line">        this.myTitle = newTitle</span><br><span class="line">      &#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h5 id="prop"><a href="#prop" class="headerlink" title="prop"></a>prop</h5><p>prop定义：组件上注册的一些自定义组件</p>
+<h5 id="9-2-prop"><a href="#9-2-prop" class="headerlink" title="9.2 prop"></a>9.2 prop</h5><p>prop定义：组件上注册的一些自定义组件</p>
 <p>prop作用：向子组件传递数据</p>
 <p>可以传递任意数量，任意类型的数据</p>
 <p>props校验</p>
@@ -291,7 +285,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="非父子关系"><a href="#非父子关系" class="headerlink" title="非父子关系"></a>非父子关系</h5><ul>
+<h5 id="9-3-非父子关系"><a href="#9-3-非父子关系" class="headerlink" title="9.3 非父子关系"></a>9.3 非父子关系</h5><ul>
 <li>provide &amp; inject<ul>
 <li>跨层级共享数据</li>
 <li>简单数据非响应式</li>
@@ -305,19 +299,140 @@
 </ul>
 </li>
 </ul>
-<h5 id="通用解决方案-Vuex"><a href="#通用解决方案-Vuex" class="headerlink" title="通用解决方案-Vuex"></a>通用解决方案-Vuex</h5><p>管理组件之间的数据交互，提供一个集中式的管理方式，任何组件都可以按照指定的方式读取和改变数据</p>
-<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><p>v-modelz本质上是一个语法糖。例如应用在输入框上，就是value属性和input事件的合写。</p>
-<h5 id="表单类组件封装"><a href="#表单类组件封装" class="headerlink" title="表单类组件封装"></a>表单类组件封装</h5><ul>
+<h5 id="9-4-通用解决方案-Vuex"><a href="#9-4-通用解决方案-Vuex" class="headerlink" title="9.4 通用解决方案-Vuex"></a>9.4 通用解决方案-Vuex</h5><p>管理组件之间的数据交互，提供一个集中式的管理方式，任何组件都可以按照指定的方式读取和改变数据</p>
+<h4 id="10、v-model"><a href="#10、v-model" class="headerlink" title="10、v-model"></a>10、v-model</h4><p>v-modelz本质上是一个语法糖。例如应用在输入框上，就是value属性和input事件的合写。</p>
+<h5 id="10-1-表单类组件封装"><a href="#10-1-表单类组件封装" class="headerlink" title="10.1 表单类组件封装"></a>10.1 表单类组件封装</h5><ul>
 <li>父传子 数据应该由父组件传递过来，v-model 拆解绑定数据</li>
 <li>子传父： 监听输入，子传父传值给父组件修改</li>
 </ul>
-<h5 id="v-model简化"><a href="#v-model简化" class="headerlink" title="v-model简化"></a>v-model简化</h5><p>父组件用v-model绑定</p>
+<h5 id="10-2-v-model简化"><a href="#10-2-v-model简化" class="headerlink" title="10.2 v-model简化"></a>10.2 v-model简化</h5><p>父组件用v-model绑定</p>
 <p>子组件用value接收</p>
 <p>事件用input触发</p>
-<h4 id="sync修饰符"><a href="#sync修饰符" class="headerlink" title=".sync修饰符"></a>.sync修饰符</h4><p>可以实现子组件和父组件的双向绑定</p>
+<h4 id="11、-sync修饰符"><a href="#11、-sync修饰符" class="headerlink" title="11、.sync修饰符"></a>11、.sync修饰符</h4><p>可以实现子组件和父组件的双向绑定</p>
 <p>prop属性名可以自定义，非固定为value</p>
 <p>事件用updata:属性名触发 </p>
-<h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>管理页面之间的关系，完成单页面的应用</p>
+<h4 id="12、ref-和-refs"><a href="#12、ref-和-refs" class="headerlink" title="12、ref 和 $refs"></a>12、ref 和 $refs</h4><p>用于获取dom元素或者组件实例</p>
+<p>特点： 查找范围 当前组件内</p>
+<p>使用：</p>
+<ul>
+<li>目标标签添加ref = “refName”</li>
+<li>通过 this.$refs.refName</li>
+<li>如果是组件，可以通过this.$refs.refName.组件内方法()  调用组件内方法</li>
+</ul>
+<h4 id="13、Vue异步更新、-nextTick"><a href="#13、Vue异步更新、-nextTick" class="headerlink" title="13、Vue异步更新、$nextTick"></a>13、Vue异步更新、$nextTick</h4><p>Vue是异步更新的，为了减少dom的操作</p>
+<p>所以一些连续的动作会出现问题，比如出现一个输入框并获取焦点</p>
+<p><code>this.$nextTick(函数体)</code> 函数会在更新dom后再执行</p>
+<h4 id="14、自定义指令"><a href="#14、自定义指令" class="headerlink" title="14、自定义指令"></a>14、自定义指令</h4><p>自己定义的指令，可以封装一些dom操作</p>
+<ul>
+<li><p>全局注册</p>
+</li>
+<li><p>局部注册</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 全局注册--&gt;</span><br><span class="line">Vue.directive(&#x27;指令名&#x27;, &#123;</span><br><span class="line">	inserted(el, binding)&#123;</span><br><span class="line">		//具体内容</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;!-- 局部注册--&gt;</span><br><span class="line">directives: &#123;</span><br><span class="line">指令名: &#123;</span><br><span class="line">	&lt;!-- 元素被添加进页面--&gt;</span><br><span class="line">	inserted(el, binding)&#123;</span><br><span class="line">		//具体内容</span><br><span class="line">	&#125;,</span><br><span class="line">	&lt;!-- 指令的数据变化之后--&gt;</span><br><span class="line">	updata(el, binding)&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以通过等号的形式为指令绑定具体的参数值</p>
+<p>通过binding.value 在代码中获取参数值</p>
+</li>
+</ul>
+<h4 id="15、插槽"><a href="#15、插槽" class="headerlink" title="15、插槽"></a>15、插槽</h4><p>让组件内部的一些结构支持自定义</p>
+<p>默认插槽</p>
+<p> 使用：</p>
+<ul>
+<li>在需要定制的地方通过<code>&lt;slot&gt;&lt;/slot&gt;</code>占位</li>
+<li>在使用组件时在组件标签内填入内容</li>
+</ul>
+<p>后备内容</p>
+<ul>
+<li>在<code>&lt;slot&gt;&lt;/slot&gt;</code> 中设置默认内容 </li>
+</ul>
+<p>具名插槽</p>
+<p>一个组件内有多个结构需要自定义</p>
+<p><code>&lt;slot name = ‘name’&gt;&lt;/slot&gt;</code></p>
+<p><code>&lt;template v-slot:name&gt;&lt;/template&gt;</code></p>
+<p>简写</p>
+<p><code>&lt;template #name&gt;&lt;/template&gt;</code></p>
+<p>作用域插槽</p>
+<p>定义插槽时，可以同时传值</p>
+<ol>
+<li>给slot标签添加属性</li>
+</ol>
+<p><code>&lt;slot name = ‘name’ :id = &quot;item.id&quot; msg = &quot;msg&quot;&gt;&lt;/slot&gt;</code></p>
+<ol start="2">
+<li>将所有属性作为一个对象传递</li>
+<li>通过template接收 默认插槽的名字为default</li>
+</ol>
+<p><code>&lt;template #name = &quot;obj&quot;&gt;&lt;/template&gt;</code></p>
+<h4 id="16、单页面应用程序"><a href="#16、单页面应用程序" class="headerlink" title="16、单页面应用程序"></a>16、单页面应用程序</h4><p>所有功能在一个html页面上实现</p>
+<p>优点：</p>
+<ul>
+<li>按需更新性能高</li>
+<li>开发效率高</li>
+<li>用户体验好</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>学习成本高</li>
+<li>首屏加载慢 （按需加载）</li>
+<li>SEO差 搜索引擎优化差</li>
+</ul>
+<h4 id="17、路由-Vue-Router"><a href="#17、路由-Vue-Router" class="headerlink" title="17、路由 Vue Router"></a>17、路由 Vue Router</h4><p>管理页面之间的关系，完成单页面的应用</p>
+<p>路径与组件之间的映射关系</p>
+<p>步骤：</p>
+<ul>
+<li><p>下载</p>
+<p><code>yarn add vue-router@3.6.5</code></p>
+</li>
+<li><p>引入</p>
+<p><code>import VueRouter from &#39;vue-router&#39;</code></p>
+</li>
+<li><p>注册 插件初始化</p>
+<p><code>Vue.use(VueRouter)</code></p>
+</li>
+<li><p>创建路由对象</p>
+<p><code>const router = new VueRouter() </code> </p>
+</li>
+<li><p>注入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	render: h =&gt; h(App),</span><br><span class="line">	router</span><br><span class="line">&#125;).$mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure></li>
+<li><p>创建需要的组件，配置路由规则</p>
+</li>
+<li><p>配置导航，配置路由出口（路径匹配的组件显示的位置）</p>
+</li>
+</ul>
+<h5 id="17-1-声明式导航"><a href="#17-1-声明式导航" class="headerlink" title="17.1 声明式导航"></a>17.1 声明式导航</h5><p><code>&lt;router-link to = &#39;&#39;&gt;&lt;/router-link&gt;</code></p>
+<p>router-link 会自动给当前导航添加了两个高亮类名</p>
+<p>router-link-active 模糊匹配，/my /my/a /my/b</p>
+<p>router-link-exact-active 精确匹配 /my</p>
+<p>可以定制类名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> <span class="title class_">VueRouter</span>(&#123;</span><br><span class="line"><span class="attr">routes</span>:[],</span><br><span class="line"><span class="attr">linkActiveClass</span>: <span class="string">&#x27;active&#x27;</span>, <span class="comment">//router-link-active</span></span><br><span class="line"><span class="attr">linkExactActiveClass</span>: <span class="string">&#x27;exact-active&#x27;</span>, <span class="comment">//router-link-exact-active</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="17-2-声明式导航-传参"><a href="#17-2-声明式导航-传参" class="headerlink" title="17.2 声明式导航-传参"></a>17.2 声明式导航-传参</h5><ul>
+<li><p>查询参数传参（适合多个参数）</p>
+<p><code>to = &quot;/path?参数名=值&quot;</code></p>
+<p><code>$route.query.参数名</code></p>
+</li>
+<li><p>动态路由传参</p>
+<p><code>path: &#39;/search/:id?&#39;</code> 加问号可以不带参数</p>
+<p><code>$route.params.参数名</code></p>
+</li>
+</ul>
+<h5 id="17-3-重定向"><a href="#17-3-重定向" class="headerlink" title="17.3 重定向"></a>17.3 重定向</h5><p>匹配到前面的 跳转到后面</p>
+<p><code>path: &#39;/&#39;, redirect: &#39;/home&#39;</code></p>
+<h5 id="17-4-404"><a href="#17-4-404" class="headerlink" title="17.4 404"></a>17.4 404</h5><p>当路径找不到匹配时，给个提示页面</p>
+<p>配在路由最后</p>
+<p><code>path: &#39;*&#39;, component: NotFound</code></p>
+<h5 id="17-5-模式设置"><a href="#17-5-模式设置" class="headerlink" title="17.5 模式设置"></a>17.5 模式设置</h5><ul>
+<li>hash路由（默认）</li>
+<li>history路由（常用）</li>
+</ul>
+<h5 id="17-6-编程式导航"><a href="#17-6-编程式导航" class="headerlink" title="17.6 编程式导航"></a>17.6 编程式导航</h5><ul>
+<li><p>path路径跳转</p>
+<p><code>this.$router.push(&#39;路由路径&#39;)</code></p>
+<p>完整写法（更适合传参）</p>
+<p><code>this.$router.push(&#123;path: &#39;&#39;, query:&#123;&#125;&#125;)</code> </p>
+</li>
+<li><p>通过命名路由跳转</p>
+<p><code>this.$router.push(&#123;name: &#39;&#39;&#125;)</code></p>
+</li>
+</ul>
 <h4 id="VUE3-新特性"><a href="#VUE3-新特性" class="headerlink" title="VUE3 新特性"></a>VUE3 新特性</h4><p>六大亮点</p>
 <ul>
 <li>Performance ：性能更强</li>
