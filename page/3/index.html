@@ -885,6 +885,11 @@
 
 
 <h4 id="4、表单输入绑定"><a href="#4、表单输入绑定" class="headerlink" title="4、表单输入绑定"></a>4、表单输入绑定</h4><p>v-model 双向绑定数据</p>
+<p>v-model是语法糖 可以解构为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input :value = &quot;value&quot; @input = &quot;value = $event.target.value &quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+
+
 <ul>
 <li><p>.lazy </p>
 <p>在change后获取</p>
@@ -896,7 +901,7 @@
 <p>自动转换为数字</p>
 </li>
 </ul>
-<h4 id="5、computer计算属性"><a href="#5、computer计算属性" class="headerlink" title="5、computer计算属性"></a>5、computer计算属性</h4><p>是一个属性，封装一个计算过程</p>
+<h4 id="5、computed计算属性"><a href="#5、computed计算属性" class="headerlink" title="5、computed计算属性"></a>5、computed计算属性</h4><p>是一个属性，封装一个计算过程</p>
 <h4 id="6、watch监听函数"><a href="#6、watch监听函数" class="headerlink" title="6、watch监听函数"></a>6、watch监听函数</h4><p>当数据修改就会执行</p>
 <h4 id="7、生命周期"><a href="#7、生命周期" class="headerlink" title="7、生命周期"></a>7、生命周期</h4><ul>
 <li>创建</li>
@@ -979,7 +984,29 @@
 </ul>
 </li>
 </ul>
-<h5 id="9-4-通用解决方案-Vuex"><a href="#9-4-通用解决方案-Vuex" class="headerlink" title="9.4 通用解决方案-Vuex"></a>9.4 通用解决方案-Vuex</h5><p>管理组件之间的数据交互，提供一个集中式的管理方式，任何组件都可以按照指定的方式读取和改变数据</p>
+<h5 id="9-4-通用解决方案-Vuex"><a href="#9-4-通用解决方案-Vuex" class="headerlink" title="9.4 通用解决方案-Vuex"></a>9.4 通用解决方案-Vuex</h5><p>状态管理工具</p>
+<p>管理组件之间的数据交互，提供一个集中式的管理方式，任何组件都可以按照指定的方式读取和改变数据</p>
+<p>优点：</p>
+<ul>
+<li>共同维护一份数据，数据集中化管理</li>
+<li>响应式变化</li>
+<li>操作简洁  </li>
+</ul>
+<p>通过<code>&#123;&#123;$stroe.state.xxx&#125;&#125;</code> 引用仓库中的数据</p>
+<p>可以通过计算属性和mapState来简化获取数据的写法</p>
+<p>Vuex遵循单向数据流，组件中不能直接修改仓库的数据</p>
+<p>通过mutations修改state数据， mutations必须是同步的</p>
+<p>在mutations中封装修改数据的方法</p>
+<p>通过<code>this.$store.commit(&#39;方法名&#39;)</code>调用mutations中封装的方法</p>
+<p>可以通过mapMutations简化写法</p>
+<p>通过actions处理异步操作</p>
+<p>在actions中封装方法</p>
+<p>页面中用dispatch调用actions中的方法</p>
+<p>可以通过mapActions简化写法</p>
+<p>getters</p>
+<p>除了state之外，有时我们还需要从state中派生出一些状态，这些状态是依赖state的，此时会用到getters</p>
+<p>可以通过store访问</p>
+<p>也可以通过mapGetters映射</p>
 <h4 id="10、v-model"><a href="#10、v-model" class="headerlink" title="10、v-model"></a>10、v-model</h4><p>v-modelz本质上是一个语法糖。例如应用在输入框上，就是value属性和input事件的合写。</p>
 <h5 id="10-1-表单类组件封装"><a href="#10-1-表单类组件封装" class="headerlink" title="10.1 表单类组件封装"></a>10.1 表单类组件封装</h5><ul>
 <li>父传子 数据应该由父组件传递过来，v-model 拆解绑定数据</li>
