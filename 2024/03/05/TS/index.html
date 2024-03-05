@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>TS学习 | White Horse Village</title><meta name="author" content="lele"><meta name="copyright" content="lele"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. TS介绍1.1 TS是什么TypeScript 是 JS的超集 TypeScript  &#x3D; Type + JavaScript 1234&#x2F;&#x2F;有明确类型let age1: number &#x3D; 18&#x2F;&#x2F;无明确类型let age2 &#x3D; 18    1.2 TS为什么要添加类型支持 背景：JS的类型系统存在“先天缺陷”，JS代码中绝大部分错误都是类型错误(Uncaught TypeError)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TS学习">
+<meta property="og:url" content="http://www.bmzll.xyz/2024/03/05/TS/index.html">
+<meta property="og:site_name" content="White Horse Village">
+<meta property="og:description" content="1. TS介绍1.1 TS是什么TypeScript 是 JS的超集 TypeScript  &#x3D; Type + JavaScript 1234&#x2F;&#x2F;有明确类型let age1: number &#x3D; 18&#x2F;&#x2F;无明确类型let age2 &#x3D; 18    1.2 TS为什么要添加类型支持 背景：JS的类型系统存在“先天缺陷”，JS代码中绝大部分错误都是类型错误(Uncaught TypeError)。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.bmzll.xyz/img/avatar.jpg">
+<meta property="article:published_time" content="2024-03-05T12:03:09.000Z">
+<meta property="article:modified_time" content="2024-03-05T12:28:32.338Z">
+<meta property="article:author" content="lele">
+<meta property="article:tag" content="前端学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.bmzll.xyz/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://www.bmzll.xyz/2024/03/05/TS/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'TS学习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-05 20:28:32'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="White Horse Village"><span class="site-name">White Horse Village</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">TS学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-05T12:03:09.000Z" title="发表于 2024-03-05 20:03:09">2024-03-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-05T12:28:32.338Z" title="更新于 2024-03-05 20:28:32">2024-03-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="TS学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="1-TS介绍"><a href="#1-TS介绍" class="headerlink" title="1. TS介绍"></a>1. TS介绍</h3><h4 id="1-1-TS是什么"><a href="#1-1-TS是什么" class="headerlink" title="1.1 TS是什么"></a>1.1 TS是什么</h4><p>TypeScript 是 JS的超集</p>
+<p>TypeScript  = Type + JavaScript</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//有明确类型</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">age1</span>: <span class="built_in">number</span> = <span class="number">18</span></span><br><span class="line"><span class="comment">//无明确类型</span></span><br><span class="line"><span class="keyword">let</span> age2 = <span class="number">18</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-2-TS为什么要添加类型支持"><a href="#1-2-TS为什么要添加类型支持" class="headerlink" title="1.2 TS为什么要添加类型支持"></a>1.2 TS为什么要添加类型支持</h4><ul>
+<li><p>背景：JS的类型系统存在“先天缺陷”，JS代码中绝大部分错误都是类型错误(Uncaught TypeError)。 </p>
+</li>
+<li><p>问题：增加了找Bug、改Bug的时间，严重影响开发效率。</p>
+</li>
+</ul>
+<p>从编程语言的动静来区分，TypeScript属于静态类型的编程语言，JS属于动态类型的编程语言。 </p>
+<p>静态类型：编译期做类型检查；</p>
+<p>动态类型：执行期做类型检查。 代码编译和代码执行的顺序：1编译2执行。</p>
+<p>对于JS来说：需要等到代码真正去执行的时候才能发现错误（晚）。<br>对于TS来说：在代码编译的时候（代码执行前）就可以发现错误（早）。<br>并且，配合VSCode等开发工具，TS可以提前到在编写代码的同时就发现代码中的错误，减少找Bug、改Bug时间。</p>
+<h3 id="2-TS常用类型"><a href="#2-TS常用类型" class="headerlink" title="2. TS常用类型"></a>2. TS常用类型</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原始类型</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">age</span>: <span class="built_in">number</span> = <span class="number">19</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">myname</span>: <span class="built_in">string</span> = <span class="string">&#x27;zll&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">flag</span>: <span class="built_in">boolean</span> = <span class="literal">true</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">a</span>: <span class="literal">null</span> = <span class="literal">null</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">b</span>: <span class="literal">undefined</span> = <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">s</span>: <span class="built_in">symbol</span> = <span class="title class_">Symbol</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">//对象类型</span></span><br><span class="line"><span class="comment">// 在TS中更加细化，每个具体的对象都有自己的类型语法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">numbers</span>: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="attr">str_list</span>: <span class="title class_">Array</span>&lt;<span class="built_in">string</span>&gt; = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="comment">//数组中既有number 又有 string</span></span><br><span class="line"><span class="comment">// | 叫做联合类型 由两个或多个其他类型组成的类型，表示可以是这些类型中的任意一种</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">list</span>: (<span class="built_in">number</span> | <span class="built_in">string</span>)[] = [<span class="number">1</span>, <span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>]</span><br><span class="line"><span class="comment">//没有括号就是可以为number 或者为 string[]</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">list1</span>: <span class="built_in">number</span> | <span class="built_in">string</span>[] = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> <span class="attr">list2</span>: <span class="built_in">number</span> | <span class="built_in">string</span>[] = <span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//函数类型</span></span><br><span class="line"><span class="comment">//函数类型指的是函数参数和返回值的类型</span></span><br><span class="line"><span class="comment">// 单独指定</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> add = (<span class="attr">a</span>: <span class="built_in">number</span>, <span class="attr">b</span>: <span class="built_in">number</span>): <span class="function"><span class="params">number</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//同时指定 只适用于函数表达式</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">add</span>: (<span class="attr">a</span>: <span class="built_in">number</span>, <span class="attr">b</span>: <span class="built_in">number</span>): <span class="built_in">number</span> = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123; <span class="keyword">return</span> a + b&#125;</span><br><span class="line"><span class="comment">//没有返回值为void</span></span><br><span class="line"><span class="keyword">const</span> print = (<span class="attr">msg</span>: <span class="built_in">string</span>): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(msg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可选参数</span></span><br><span class="line"><span class="comment">//在可选参数后添加问好 ？</span></span><br><span class="line"><span class="comment">//可选参数只能出现在参数列表最后，可选参数后不能出现必选参数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a?: <span class="built_in">number</span>, b?: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对象类型 JS中的对象是由属性和方法构成的，而TS中对象的类型就是在描述对象的结构（有什么类型的属性和方法）</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: &#123;<span class="attr">name</span>: strinh; <span class="attr">age</span>: <span class="built_in">number</span>; <span class="title function_">say</span>(): <span class="built_in">void</span>&#125; = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;zll&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">25</span>,</span><br><span class="line">  <span class="title function_">say</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以通过换行去掉;</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="title function_">say</span>(): <span class="built_in">void</span></span><br><span class="line">&#125; = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;zll&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">25</span>,</span><br><span class="line">  <span class="title function_">say</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//存在可选属性，语法与可选参数一致</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//接口</span></span><br><span class="line"><span class="comment">//当一个对象类型被多次使用时，一般会使用接口(interface)来描述对象的类型，达到复用的目的。</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IPerson</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="title function_">say</span>(): <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: <span class="title class_">IPerson</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;zll&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">25</span>,</span><br><span class="line">  <span class="title function_">say</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//接口的继承</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IStudent</span> <span class="keyword">extends</span> <span class="title class_">IPerson</span>&#123;</span><br><span class="line">  <span class="attr">course</span>: <span class="built_in">string</span>[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//元组 另一种类型的数组，他确切知道包含了多少个变量和变量类型</span></span><br><span class="line"><span class="keyword">let</span> <span class="attr">position</span>: [<span class="built_in">number</span>, <span class="built_in">number</span>] = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//字面量类型 不管是字符串还是数值都可以作为类型</span></span><br><span class="line"><span class="keyword">let</span> str1 = <span class="string">&#x27;hello&#x27;</span> <span class="comment">//类型为string</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str2 = <span class="string">&#x27;hello&#x27;</span> <span class="comment">// 类型为‘hello’</span></span><br><span class="line"><span class="comment">//可以用来配合联合类型一起使用，用来表明一组明确的可选值列表</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">changeDirection</span>(<span class="params">direction: <span class="string">&#x27;up&#x27;</span> | <span class="string">&#x27;down&#x27;</span> | <span class="string">&#x27;left&#x27;</span> | <span class="string">&#x27;right&#x27;</span></span>): <span class="built_in">void</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//枚举类型 类似字面量价联合类型 通过点访问枚举成员</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Direction</span> &#123; <span class="title class_">Up</span>, <span class="title class_">Down</span>, <span class="title class_">Left</span>, <span class="title class_">Right</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">changeDirection</span>(<span class="params">dirention: Direction</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">changeDirection</span>(<span class="title class_">Direction</span>.<span class="property">Up</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-1-JS-已有类型"><a href="#2-1-JS-已有类型" class="headerlink" title="2.1 JS 已有类型"></a>2.1 JS 已有类型</h4><ul>
+<li>原始类型<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>symbol</li>
+</ul>
+</li>
+<li>对象类型<ul>
+<li>数组</li>
+<li>对象</li>
+<li>函数</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-TS-新增类型"><a href="#2-2-TS-新增类型" class="headerlink" title="2.2 TS 新增类型"></a>2.2 TS 新增类型</h4><ul>
+<li><p>联合类型</p>
+<blockquote>
+<p>用 ｜ 分割类型</p>
+</blockquote>
+</li>
+<li><p>类型别名</p>
+</li>
+<li><p>接口</p>
+<blockquote>
+<p>与类型别名的区别</p>
+<p>相同点： 都可以为对象指定类型</p>
+<p>不同点：</p>
+<ul>
+<li>接口只能为对象指定类型</li>
+<li>类型别名可以为任意类型指定别名</li>
+<li>接口可以继承</li>
+</ul>
+</blockquote>
+</li>
+<li><p>元组</p>
+</li>
+<li><p>字面量类型</p>
+</li>
+<li><p>枚举</p>
+<blockquote>
+<p>枚举成员是有值的，默认从0开始自增长</p>
+<p>也可以给枚举成员初始化值</p>
+<p>数字枚举 枚举值都为数字</p>
+<p>字符串枚举没有自增长行为，需要每个都赋值</p>
+<p>其他类型在编译成js后会自动去掉</p>
+<p>枚举因为有值会被编译成js</p>
+</blockquote>
+</li>
+<li><p>void</p>
+</li>
+<li><p>any</p>
+<blockquote>
+<p>不推荐使用，会失去TS类型保护的优势，对象为any类型时，可以对该值进行任意操作，并且不会有报错</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="2-3-类型别名"><a href="#2-3-类型别名" class="headerlink" title="2.3 类型别名"></a>2.3 类型别名</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为任意类型起别名 简化类型的写法</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">CustomArray</span> = (<span class="built_in">number</span> | <span class="built_in">string</span>)[]</span><br><span class="line"><span class="keyword">let</span> <span class="attr">list1</span>: <span class="title class_">CustomArray</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">&#x27;a&#x27;</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用type关键字</li>
+<li>类型别名可以为任意合法的变量名</li>
+</ul>
+<h4 id="2-4-类型推论"><a href="#2-4-类型推论" class="headerlink" title="2.4 类型推论"></a>2.4 类型推论</h4><p>在TS中，某些没有明确指出类型的地方，TS的类型推论机制会帮助提供类型。<br>换句话说：由于类型推论的存在，这些地方，类型注解可以省略不写！<br>发生类型推论的2种常见场景：</p>
+<ol>
+<li><p>声明变量并初始化时</p>
+</li>
+<li><p>决定函数返回值时。</p>
+</li>
+</ol>
+<h4 id="2-5-类型断言"><a href="#2-5-类型断言" class="headerlink" title="2.5 类型断言"></a>2.5 类型断言</h4><p> 有时候你会比TS更加明确一个值的类型，此时，可以使用类型断言来指定更具体的类型。</p>
+<p>类型推论可能会返回一个比较宽泛的类型，我们不能使用这个宽泛的类型来访问一些特有的属性和方法</p>
+<ol>
+<li><p>使用as关键字实现</p>
+</li>
+<li><p>as后跟一个更加具体的类型</p>
+</li>
+<li><p>也可以通过&lt;&gt; 实现</p>
+</li>
+<li><p>在控制台用console.dir()打印DOM元素，在属性列表的最后可以看到元素的类型</p>
+</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aLink = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;link&#x27;</span>) <span class="keyword">as</span> <span class="title class_">HTMLAnchorElement</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> aLink = &lt;<span class="title class_">HTMLAnchorElement</span>&gt;<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;link&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-6-typeof"><a href="#2-6-typeof" class="headerlink" title="2.6 typeof"></a>2.6 typeof</h4><p>只能查询变量或者对象属性的类型</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">&quot;hello&quot;</span> <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p = &#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params">point: &#123;x: <span class="built_in">number</span>; y: <span class="built_in">number</span>&#125;</span>)(<span class="params"></span>)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f</span>(<span class="params">point: <span class="keyword">typeof</span> p</span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-TS中的高级类型"><a href="#3-TS中的高级类型" class="headerlink" title="3. TS中的高级类型"></a>3. TS中的高级类型</h3><h4 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h4><ul>
+<li>class类</li>
+<li>类型兼容性</li>
+<li>交叉类型</li>
+<li>泛型和keyof</li>
+<li>索引签名类型和索引查询类型</li>
+<li>映射类型</li>
+</ul>
+<h4 id="3-2-class"><a href="#3-2-class" class="headerlink" title="3.2 class"></a>3.2 class</h4><ol>
+<li>根据TS中的类型推论，可以知道Person类的实例对象p的类型是Person</li>
+<li>TS中的class,不仅提供了class的语法功能，也作为一种类型存在。</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">  gender = <span class="string">&#x27;man&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>声明成员age,类型为number（没有初始值)。</p>
+</li>
+<li><p>声明成员gender,并设置初始值，此时，可省略类型注解(TS类型推论为string类型)。</p>
+</li>
+<li><p>成员初始化（比如，age:number)后，才可以通过this.age来访问实例成员。</p>
+</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span></span><br><span class="line">  <span class="attr">gender</span>: <span class="built_in">string</span></span><br><span class="line">  </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">age: <span class="built_in">number</span>, gender: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">gender</span> = gender</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>需要为构造函数指定类型注解，否则会被隐式推断为any;构造函数不需要返回值类型。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.bmzll.xyz">lele</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.bmzll.xyz/2024/03/05/TS/">http://www.bmzll.xyz/2024/03/05/TS/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.bmzll.xyz" target="_blank">White Horse Village</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">前端学习</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/03/02/Less%E5%AD%A6%E4%B9%A0/" title="Less学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Less学习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/18/js%E5%AD%A6%E4%B9%A0/" title="js基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-18</div><div class="title">js基础</div></div></a></div><div><a href="/2023/03/24/VUE%E5%AD%A6%E4%B9%A0/" title="VUE学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-24</div><div class="title">VUE学习</div></div></a></div><div><a href="/2023/03/25/React%E5%AD%A6%E4%B9%A0/" title="React学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-25</div><div class="title">React学习</div></div></a></div><div><a href="/2023/03/26/HTTP%E5%AD%A6%E4%B9%A0/" title="HTTP学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-26</div><div class="title">HTTP学习</div></div></a></div><div><a href="/2023/09/07/Webpack%E5%AD%A6%E4%B9%A0/" title="Webpack学习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-07</div><div class="title">Webpack学习</div></div></a></div><div><a href="/2023/09/07/webpack%E5%AD%A6%E4%B9%A0--%E5%8E%9F%E7%90%86/" title="Webpack学习--原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-07</div><div class="title">Webpack学习--原理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">lele</div><div class="author-info__description">欢迎来到白马庄</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zll0520/"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-TS%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">1. TS介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-TS%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 TS是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-TS%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%B1%BB%E5%9E%8B%E6%94%AF%E6%8C%81"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 TS为什么要添加类型支持</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TS%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">2. TS常用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-JS-%E5%B7%B2%E6%9C%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 JS 已有类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-TS-%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 TS 新增类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 类型别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 类型推论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 类型断言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-typeof"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 typeof</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-TS%E4%B8%AD%E7%9A%84%E9%AB%98%E7%BA%A7%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">3. TS中的高级类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-class"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 class</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/05/TS/" title="TS学习">TS学习</a><time datetime="2024-03-05T12:03:09.000Z" title="发表于 2024-03-05 20:03:09">2024-03-05</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2024/03/02/Less%E5%AD%A6%E4%B9%A0/" title="Less学习">Less学习</a><time datetime="2024-03-02T12:03:09.000Z" title="发表于 2024-03-02 20:03:09">2024-03-02</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/11/22/%E9%AB%98%E7%BA%A7---java/" title="高级 - java">高级 - java</a><time datetime="2023-11-22T12:03:09.000Z" title="发表于 2023-11-22 20:03:09">2023-11-22</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/11/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B---java/" title="多线程 - java">多线程 - java</a><time datetime="2023-11-18T12:03:09.000Z" title="发表于 2023-11-18 20:03:09">2023-11-18</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/11/14/IO%E6%B5%81%20-%20java/" title="IO流 - java">IO流 - java</a><time datetime="2023-11-14T12:03:09.000Z" title="发表于 2023-11-14 20:03:09">2023-11-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By lele</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
